@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" className="min-h-screen  flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <Image
@@ -70,8 +70,8 @@ export default function Home() {
             height={300}
             className="mx-auto mb-8"
           />
-          <h1 className="text-2xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-emerald-400 text-transparent bg-clip-text">
-            Code. Create. Conquer.
+          <h1 className="font-['Starjedi'] tracking-widest text-2xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-emerald-400 text-transparent bg-clip-text">
+            CodE. CrEatE. ConquEr.
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8">
             A Hackathon. Made for JGEC
@@ -86,7 +86,7 @@ export default function Home() {
 
       <section id="about" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">About The Event</h2>
+          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">About ThE EvEnt</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="z-40 backdrop-blur-lg border p-6 border-gray-800">
               <Card className="p-6 bg-gray-900/50 border-gray-800">
@@ -97,34 +97,34 @@ export default function Home() {
                   College (JGEC), a platform where innovation meets
                   implementation. <br /><br />
 
-
                   This event will bring together talented students to
                   brainstorm, collaborate, and develop technologydriven solutions to real-world problems. With a focus
                   on creativity, problem-solving and technical expertise, this hackathon is an opportunity to foster a
                   culture of innovation within our campus.
-
-
-
                 </p>
               </Card>
             </div>
-            <Card className="p-6 bg-gray-900/50 border-gray-800">
-              <h3 className="text-2xl font-bold mb-4 text-emerald-400">Why Participate?</h3>
-              <ul className="space-y-11 text-gray-300">
-                <li>🚀 Showcase your technical skills</li>
-                <li>🤝 Network with fellow developers</li>
-                <li>🏆 Win exciting prizes</li>
-                <li>📚 Learn new technologies</li>
-                <li>💼 Build your portfolio</li>
-              </ul>
-            </Card>
+            <div className="z-40 backdrop-blur-lg border p-6 border-gray-800">
+              <Card className="p-6 bg-gray-900/50 border-gray-800">
+                <h3 className="text-2xl font-bold mb-4 text-emerald-400">Why Participate?</h3>
+                <ul className="space-y-3 text-gray-300">
+                  <li>🚀 Showcase your technical skills</li>
+                  <li>🤝 Network with fellow developers</li>
+                  <li>🏆 Win exciting prizes</li>
+                  <li>📚 Learn new technologies</li>
+                  <li>💼 Build your portfolio</li>
+                </ul>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* ---------------------------------------------------------------TIMELINE--------------------------------------------- */}
+
       <section id="timeline" className="py-20 bg-gray-900/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Event Timeline</h2>
+          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">EvEnt TimElinE</h2>
           <div className="max-w-3xl mx-auto space-y-8">
             {[
               { time: '25th january', event: 'Registration & Check-in', icon: Users },
@@ -147,36 +147,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------------------------------------------------------------RULES--------------------------------------------- */}
+
       <section id="rules" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Rules & Guidelines</h2>
+          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">RulEs and GuidElinEs</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="p-6 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">General Rules</h3>
               <ul className="space-y-3 text-gray-300">
-                <li>• Team size: 2-4 members</li>
-                <li>• All team members must be from the same college</li>
-                <li>• Use of third-party APIs is allowed</li>
-                <li>• Project must be original work</li>
-                <li>• Code must be submitted to GitHub</li>
+                <li>👥 Team size: 2-4 members</li>
+                <li>🏫 All team members must be from the same college</li>
+                <li>🔗 Use of third-party APIs is allowed</li>
+                <li>📝 Project must be original work</li>
+                <li>📂 Code must be submitted to GitHub</li>
               </ul>
             </Card>
             <Card className="p-6 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">Judging Criteria</h3>
               <ul className="space-y-3 text-gray-300">
-                <li>• Innovation & Creativity (30%)</li>
-                <li>• Technical Complexity (25%)</li>
-                <li>• Practicality & Impact (25%)</li>
-                <li>• Presentation (20%)</li>
+                <li>💡 Innovation & Creativity (30%)</li>
+                <li>🔧 Technical Complexity (25%)</li>
+                <li>🌍 Practicality & Impact (25%)</li>
+                <li>🗣️ Presentation (20%)</li>
               </ul>
             </Card>
           </div>
         </div>
       </section>
 
+      {/* ---------------------------------------------------------------CONTACT--------------------------------------------- */}
+
       <section id="contact" className="py-20 bg-gray-900/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Contact Us</h2>
+          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">ContaCt us</h2>
           <div className="max-w-md mx-auto">
             <Card className="p-6 bg-gray-900/50 border-gray-800">
               <form className="space-y-4">
