@@ -1,108 +1,148 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import logo from "../../images/logo.png"
-import { redirect, useRouter } from 'next/navigation'
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { saveTeam } from '@/actions/saveTeam'
-import { Team, teamSchema } from '@/schemas/team'
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-function handleSubmit(team: Team){
-    saveTeam(team);
-    redirect('/');
+import Image from "next/image";
+import logo from "../../images/logo.png";
+import { redirect, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { saveTeam } from "@/actions/saveTeam";
+import { Team, teamSchema } from "@/schemas/team";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+function handleSubmit(team: Team) {
+  saveTeam(team);
+  redirect("/");
 }
 export default function Register() {
-    const form = useForm<Team>({resolver: zodResolver(teamSchema)})
-    return (
-
-        <>
-        <Card className="w-1/4 ">
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="p-6 space-y-6">
-      <h1 className="font-black text text-2xl">Register your team!</h1>
-        <FormField control={form.control} name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Team Rocket" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem> 
-          )}/>
-        <FormField control={form.control} name="members.1.name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team member 1 name</FormLabel>
-              <FormControl>
-                <Input placeholder="Jessie" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}/>
-        <FormField control={form.control} name="members.1.email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team member 1 email</FormLabel>
-              <FormControl>
-                <Input placeholder="jesse@rocket.team" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}/>
-        <FormField control={form.control} name="members.2.name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team member 2 name</FormLabel>
-              <FormControl>
-                <Input placeholder="James" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}/>
-        <FormField control={form.control} name="members.2.email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team member 2 email</FormLabel>
-              <FormControl>
-                <Input placeholder="james@rocket.team" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}/>
-        <FormField control={form.control} name="members.3.name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team member 3 name</FormLabel>
-              <FormControl>
-                <Input placeholder="Meowth" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}/>
-        <FormField control={form.control} name="members.3.email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Team member 3 email</FormLabel>
-              <FormControl>
-                <Input placeholder="meowth@rocket.team" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}/>
-        <Button className="w-full" type="submit">Create account</Button>
-      </form>
-    </Form>
-</Card>
-            <section id="register" className="py-20 bg-gray-900/30">
+  const form = useForm<Team>({ resolver: zodResolver(teamSchema) });
+  return (
+    <div className="pt-40 ">
+      <Card className="w-1/3 backdrop-blur-md mx-auto px-4 bg-gray-900/10">
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(handleSubmit)}
+            className="p-6 space-y-6 container mx-auto px-4"
+          >
+            <h1 className="text-4xl font-bold mb-10 mt-10 text-center font-['Starjedi'] tracking-widest text-white animate-pulse">
+              Register your team!
+            </h1>
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="px-4  border-gray-800">
+                  <FormLabel>Team Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Team Rocket" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <div className="grid grid-cols-2 gap-4 px-4  border-gray-800">
+              <FormField
+                control={form.control}
+                name="members.1.name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 1 name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Jessie" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="members.1.email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 1 email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="jessie@team.rocket" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4 px-4  border-gray-800">
+              <FormField
+                control={form.control}
+                name="members.2.name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 2 name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="James" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="members.2.email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 2 email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="james@team.rocket" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4 px-4 pb-6 border-gray-800">
+              <FormField
+                control={form.control}
+                name="members.3.name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 3 name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Meowth" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="members.3.email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 3 email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="meowth@team.rocket" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white" type="submit">
+              Create account
+            </Button>
+          </form>
+        </Form>
+      </Card>
+      {/* <section id="register" className="py-20 bg-gray-900/30">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold mb-10 mt-10 text-center font-['Starjedi'] tracking-widest	 " >Register</h2>
                     <div className="max-w-xl mx-auto">
-                        <Card className="p-6 bg-gray-900/50 border-gray-800">
+                        <Card className="p-6  border-gray-800">
                             <form className="space-y-10">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-3">Team Name</label>
@@ -168,10 +208,7 @@ export default function Register() {
                         </Card>
                     </div>
                 </div>
-            </section>
-
-            
-        </>
-    )
+            </section> */}
+    </div>
+  );
 }
-

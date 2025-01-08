@@ -24,10 +24,40 @@ html {
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
   --ring: 142.4 71.8% 29.2%;
+
+  --bg-background: #111827;
+  --clr-card: #1f2937;
+  --clr-1: #6420aa;
+  --clr-2: #ff3ea5;
+  --clr-3: #ff7ed4;
+
+}
+/* ----------------------glow---------------------- */
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: false;
 }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+/* ---------------------------------------------------- */
 body {
   @apply bg-background text-foreground;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
@@ -96,8 +126,108 @@ body {
 }
 
 @font-face {
-  font-family: 'Starjedi';
-  src: url('../../fonts/Starjedi.ttf');
+  font-family: "Starjedi";
+  src: url("../../fonts/Starjedi.ttf");
   font-weight: normal;
   font-style: normal;
+}
+
+/* ---------------------button shine-------------------- */
+
+.btn-shine {
+  color: #ffffff;
+  background: linear-gradient(to right, #7a7a7a 0, white 10%, #4d4d4d 30%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  90% {
+    background-position: 200vw;
+  }
+
+}
+
+/* ---------------------------------card-------------------------- */
+
+.card {
+  height: 400px;
+  width: 520px;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  /* position: absolute; */
+  margin: auto;
+  /* left: 0; */
+  /* right: 0; */
+  /* top: 0; */
+  /* bottom: 0; */
+  border-radius: 8px;
+  box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ------------------------glow--------------------- */
+
+
+
+
+
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  height: 24rem;
+  width: 16rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  background-color: var(--clr-card);
+}
+
+.card::after,
+.card::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -0.5rem;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1),
+    var(--clr-card)
+  );
+  border-radius: inherit;
+  animation: rotate 2.5s linear infinite;
+}
+
+.card::after {
+  filter: blur(3rem);
+}
+
+@keyframes rotate {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }

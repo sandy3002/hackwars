@@ -53,9 +53,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-repeat bg-[#0A1A1A]`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased bg-repeat bg-[#0A1A1A]`}
       >
-        <div className="min-h-screen bg-[url('../images/bg.png')] text-white">
+        <div className="bg-[url('../images/bg.png')] text-white">
           <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b border-gray-800">
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16">
@@ -80,7 +80,7 @@ export default function RootLayout({
               </div>
             </div>
           </nav>
-          <div className="backdrop-blur-sm">
+          <div className="min-h-screen ">
           {children}
           </div>
           <footer className="py-8 border-t border-gray-800 backdrop-blur-lg">
