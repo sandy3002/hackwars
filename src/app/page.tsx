@@ -34,32 +34,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#0A1A1A] text-white">
-      <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Image
-              src={logo}
-              alt="Hack Wars Logo"
-              width={40}
-              height={40}
-              className="w-auto h-8"
-            />
-            <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'timeline', 'rules', 'contact'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item}`}
-                  className="text-gray-300 hover:text-emerald-400 transition-colors capitalize"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    <>
       <section id="home" className="min-h-screen  flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -175,51 +150,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ---------------------------------------------------------------CONTACT--------------------------------------------- */}
-
-      <section id="contact" className="py-20 bg-gray-900/30">
-        <div className="container mx-auto px-4">
-          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">ContaCt us</h2>
-          <div className="max-w-md mx-auto">
-            <Card className="p-6 bg-gray-900/50 border-gray-800">
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  ></textarea>
-                </div>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white">
-                  Send Message
-                </Button>
-              </form>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-8 border-t border-gray-800">
-        <div className="container mx-auto px-4 text-center text-gray-400">
-          <p>© 2024 Hack Wars. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }
 
