@@ -63,7 +63,6 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">About ThE EvEnt</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="z-40 backdrop-blur-lg border p-6 border-gray-800">
               <Card className="p-6 bg-gray-900/50 border-gray-800">
                 <h3 className="text-2xl font-bold mb-4 text-emerald-400">What is Hack Wars?</h3>
                 <p className="text-gray-300">
@@ -78,8 +77,7 @@ export default function Home() {
                   culture of innovation within our campus.
                 </p>
               </Card>
-            </div>
-            <div className="z-40 backdrop-blur-lg border p-6 border-gray-800">
+            
               <Card className="p-6 bg-gray-900/50 border-gray-800">
                 <h3 className="text-2xl font-bold mb-4 text-emerald-400">Why Participate?</h3>
                 <ul className="space-y-3 text-gray-300">
@@ -90,7 +88,7 @@ export default function Home() {
                   <li>💼 Build your portfolio</li>
                 </ul>
               </Card>
-            </div>
+            
           </div>
         </div>
       </section>
