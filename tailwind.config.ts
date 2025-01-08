@@ -10,7 +10,7 @@ export default {
   theme: {
   	extend: {
 		backgroundImage: {
-			'noise': "url('/public/bg.png')",
+			'noise': "url('/src/images/bg.png')",
 		},
   		colors: {
   			background: 'hsl(var(--background))',
