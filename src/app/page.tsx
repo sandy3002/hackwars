@@ -46,7 +46,7 @@ export default function Home() {
             className="mx-auto mb-8"
           />
           <h1 className="font-['Starjedi'] tracking-widest text-2xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-emerald-400 text-transparent bg-clip-text">
-            CodE. CrEatE. ConquEr.
+            CodE. CrEatE. ConquEr...
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8">
             A Hackathon. Made for JGEC
