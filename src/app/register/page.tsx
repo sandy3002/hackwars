@@ -15,13 +15,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-async function submit(team: Team) {
-  console.log("here");
-  
-  await saveTeam(team);
-  redirect("/");
-}
+import { useToast } from "@/hooks/use-toast";
 export default function Register() {
+  const {toast} = useToast();
   const form = useForm<Team>({ 
     resolver: zodResolver(teamSchema),
     defaultValues:{
@@ -33,10 +29,20 @@ export default function Register() {
         {name: "",email:""}
       ]
     }
-   });
+  });
+  async function submit(team: Team,) {
+    await saveTeam(team);
+    console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a free .xyz domain!");
+    toast({
+      title: "Successfully registered!",
+      description: "A mail has been sent.",
+      className:"bg-green-700 text-white"
+    })
+    redirect("/");
+  }
   return (
-    <div className="flex min-h-screen m-16 items-center">
-      <Card className="max-w-[500px] sm:w-[75%] backdrop-blur-md mx-auto bg-gray-900/10">
+    <div className="flex min-h-screen md:m-16 items-center">
+      <Card className="max-w-[500px] sm:w-[75%] w-[95%] backdrop-blur-md mx-auto bg-gray-900/10">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(submit)}
@@ -142,7 +148,7 @@ export default function Register() {
                 )}
               />
             </div>
-            <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white" type="submit">
+            <Button disabled={ form.formState.isSubmitting} className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white" type="submit">
               Create account
             </Button>
           </form>
