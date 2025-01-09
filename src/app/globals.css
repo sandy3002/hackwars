@@ -39,6 +39,7 @@ html {
   --disabled-color: #970000;
   --body-color: #393937;
   --accent-color: #00dc93;
+  --accent-color2: #00a9dc;
   --white-color: #fff;
   --box-shadow: 0 0 5px #10b981, 0 0 25px #10b981, 0 0 50px #0b9466;
 
@@ -390,3 +391,35 @@ body {
 }
 
 
+/* Navbar hover */
+.link-75 {
+  color: var(--accent-color2);
+  font-size: medium;
+  padding: 10px 20px;
+  margin: 0 5px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.link-75:hover {
+  transform: translateY(-3px);
+}
+
+.link-75::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: var(--accent-color2);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.link-75:hover::before {
+  transform: scaleY(1);
+}
