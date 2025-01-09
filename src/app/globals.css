@@ -27,9 +27,11 @@ html {
 
   --bg-background: #111827;
   --clr-card: #1f2937;
-  --clr-1: #6420aa;
-  --clr-2: #ff3ea5;
-  --clr-3: #ff7ed4;
+  --clr-1: #2563eb;
+  /*  #2563eb
+      #10b981 */
+  --clr-2: #6420aa;
+  --clr-3: #10b981;
 
 }
 /* ----------------------glow---------------------- */
@@ -190,17 +192,17 @@ main {
   align-items: center;
 }
 
-.card {
+.card2 {
   position: relative;
-  height: 24rem;
-  width: 16rem;
+  /* height: 24rem;
+  width: 16rem; */
   border-radius: 0.45rem;
   cursor: pointer;
   background-color: var(--clr-card);
 }
 
-.card::after,
-.card::before {
+.card2::after,
+.card2::before {
   content: " ";
   position: absolute;
   z-index: -1;
@@ -219,7 +221,7 @@ main {
   animation: rotate 2.5s linear infinite;
 }
 
-.card::after {
+.card2::after {
   filter: blur(3rem);
 }
 

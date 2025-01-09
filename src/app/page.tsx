@@ -58,9 +58,6 @@ export default function Home() {
             CodE. CrEatE.
             <br /> ConquEr...
           </h1>
-          {/* <p className="text-xl md:text-2xl text-gray-400 mb-8 btn-shine">
-            A Hackathon. Made for JGEC
-          </p> */}
           <Button
             onClick={() => {
               r.push("/register");
@@ -69,21 +66,17 @@ export default function Home() {
           >
             Register Now
           </Button>
-          {/* <main>
-            <div className="card"></div>
-          </main> */}
         </div>
       </section>
 
       {/* ---------------------------------------------------------------ABOUT--------------------------------------------- */}
-
       <section id="about" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">
+          <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             About ThE EvEnt
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6 bg-gray-900/50 border-gray-800">
+          <div className="grid md:grid-cols-2 gap-8 ">
+            <Card className="p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 What is Hack Wars?
               </h3>
@@ -99,19 +92,19 @@ export default function Home() {
                 foster a culture of innovation within our campus.
               </p>
             </Card>
-
-            <Card className="p-6 bg-gray-900/50 border-gray-800">
+            <Card className="flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Why Participate?
               </h3>
-              <ul className="space-y-3 text-gray-300">
-                <li>🚀 Showcase your technical skills</li>
-                <li>🤝 Network with fellow developers</li>
-                <li>🏆 Win exciting prizes</li>
-                <li>📚 Learn new technologies</li>
-                <li>💼 Build your portfolio</li>
+              <ul className="flex-1 flex-col flex text-gray-300">
+                <li className="flex-1">🚀 Showcase your technical skills</li>
+                <li className="flex-1">🤝 Network with fellow developers</li>
+                <li className="flex-1">🏆 Win exciting prizes</li>
+                <li className="flex-1">📚 Learn new technologies</li>
+                <li className="flex-1">💼 Build your portfolio</li>
               </ul>
             </Card>
+            {/* </div></main> */}
           </div>
         </div>
       </section>
@@ -120,7 +113,7 @@ export default function Home() {
 
       <section id="timeline" className="py-20 bg-gray-900/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">
+          <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             EvEnt TimElinE
           </h2>
           <div className="max-w-3xl mx-auto space-y-8">
@@ -159,31 +152,31 @@ export default function Home() {
 
       <section id="rules" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="font-['Starjedi'] tracking-widest text-4xl font-bold mb-12 text-center">
+          <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             RulEs and GuidElinEs
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="p-6 bg-gray-900/50 border-gray-800">
+          <div className="grid md:grid-cols-2 gap-8  mx-auto">
+            <Card className="flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 General Rules
               </h3>
-              <ul className="space-y-3 text-gray-300">
-                <li>👥 Team size: 2-4 members</li>
-                <li>🏫 All team members must be from the same college</li>
-                <li>🔗 Use of third-party APIs is allowed</li>
-                <li>📝 Project must be original work</li>
-                <li>📂 Code must be submitted to GitHub</li>
+              <ul className="flex-1 flex flex-col  text-gray-300">
+                <li className="flex-1">👥 Team size: 2-4 members</li>
+                <li className="flex-1">🏫 All team members must be from the same college</li>
+                <li className="flex-1">🔗 Use of third-party APIs is allowed</li>
+                <li className="flex-1">📝 Project must be original work</li>
+                <li className="flex-1">📂 Code must be submitted to GitHub</li>
               </ul>
             </Card>
-            <Card className="p-6 bg-gray-900/50 border-gray-800">
+            <Card className="flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Judging Criteria
               </h3>
-              <ul className="space-y-3 text-gray-300">
-                <li>💡 Innovation & Creativity (30%)</li>
-                <li>🔧 Technical Complexity (25%)</li>
-                <li>🌍 Practicality & Impact (25%)</li>
-                <li>🗣️ Presentation (20%)</li>
+              <ul className="flex-1 flex flex-col text-gray-300">
+                <li className="flex-1">💡 Innovation & Creativity (30%)</li>
+                <li className="flex-1">🔧 Technical Complexity (25%)</li>
+                <li className="flex-1">🌍 Practicality & Impact (25%)</li>
+                <li className="flex-1">🗣️ Presentation (20%)</li>
               </ul>
             </Card>
           </div>
