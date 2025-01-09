@@ -70,13 +70,13 @@ export default function Home() {
       </section>
 
       {/* ---------------------------------------------------------------ABOUT--------------------------------------------- */}
-      <section id="about" className="py-20">
+      <section id="about" className="py-20 flex justify-center">
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             About ThE EvEnt
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 ">
-            <Card className="p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between">
+            <Card className="p-6 flex-1 max-w-2xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 What is Hack Wars?
               </h3>
@@ -92,7 +92,7 @@ export default function Home() {
                 foster a culture of innovation within our campus.
               </p>
             </Card>
-            <Card className="flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
+            <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Why Participate?
               </h3>
@@ -149,12 +149,12 @@ export default function Home() {
 
       {/* ---------------------------------------------------------------RULES--------------------------------------------- */}
 
-      <section id="rules" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="rules" className="py-20 px-4">
+        <div className="container">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             RulEs and GuidElinEs
           </h2>
-          <div className="grid md:grid-cols-2 gap-8  mx-auto">
+          <div className="grid md:grid-cols-2">
             <Card className=" flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 General Rules
@@ -173,7 +173,7 @@ export default function Home() {
                 </li>
               </ul>
             </Card>
-            <Card className="flex flex-col  p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
+            <Card className="flex flex-col  p-6 card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Judging Criteria
               </h3>
@@ -189,8 +189,8 @@ export default function Home() {
       </section>
 
       {/* --------------------------------------------------------sponsors------------------------------------------- */}
-      <section id="sponsors" className="py-20">
-        <div className="container mx-auto px-4">
+      <section id="sponsors" className="py-20 px-4">
+        <div className="container">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             SPonSorS
           </h2>

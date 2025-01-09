@@ -36,7 +36,7 @@ html {
 
 
 
-
+  --disabled-color: #970000;
   --body-color: #393937;
   --accent-color: #00dc93;
   --white-color: #fff;
@@ -253,17 +253,27 @@ body {
   overflow: hidden;
   letter-spacing: 4px;
   transition: 0.5s;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  cursor: pointer;
   /* background-color: white; */
   border: 1px solid var(--accent-color);
-  span {
-    position: absolute;
-    display: block;
-  }
   &:hover {
     background-color: var(--accent-color);
     /* background-color: white; */
     color: var(--white-color);
     border-radius: 5px;
     box-shadow: var(--box-shadow);
+  }
+  &:disabled {
+    color: var(--disabled-color);
+    border-color: var(--disabled-color);
+    cursor:not-allowed;
+    &:hover {
+      background-color: var(--disabled-color);
+      /* background-color: white; */
+      color: var(--white-color);
+      box-shadow: none;
+    }
   }
 }

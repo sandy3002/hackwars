@@ -1,6 +1,5 @@
 "use client";
-import { redirect, useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { saveTeam } from "@/actions/saveTeam";
 import { Team, teamSchema } from "@/schemas/team";
@@ -9,6 +8,7 @@ import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -18,27 +18,34 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 export default function Register() {
   const {toast} = useToast();
+  const router = useRouter();
   const form = useForm<Team>({ 
     resolver: zodResolver(teamSchema),
     defaultValues:{
       id: "",
       createdAt: 0,
-      members: [
-        {name: "",email:""},
-        {name: "",email:""},
-        {name: "",email:""}
-      ]
+      members:[{name: "",email:""},{name: "",email:""},{name: "",email:""}]
     }
   });
+  const formState = form.formState;
   async function submit(team: Team,) {
-    await saveTeam(team);
-    console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a free .xyz domain!");
+    const resp = await saveTeam(team);
+    if(resp == null){
+      console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a free .xyz domain!");
+      toast({
+        title: "Successfully registered!",
+        description: "A mail has been sent.",
+        className:"bg-green-700 text-white"
+      })
+      router.push('/');
+      return;
+    }
     toast({
-      title: "Successfully registered!",
-      description: "A mail has been sent.",
-      className:"bg-green-700 text-white"
+      title: "Error!",
+      description: resp,
+      className:"bg-red-500 text-white"
     })
-    redirect("/");
+    form.reset({},{keepValues:true, keepIsValid:false})
   }
   return (
     <div className="flex min-h-screen md:m-16 items-center">
@@ -60,6 +67,9 @@ export default function Register() {
                   <FormControl>
                     <Input placeholder="Team Rocket" {...field} />
                   </FormControl>
+                  <FormDescription>
+                    Minimum 4 characters. This name will be displayed to the public.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -68,34 +78,6 @@ export default function Register() {
               <FormField
                 control={form.control}
                 name="members.0.name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Team member 3 name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Meowth" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="members.0.email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Team member 3 email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="meowth@team.rocket" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4 border-gray-800">
-              <FormField
-                control={form.control}
-                name="members.1.name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Team member 1 name</FormLabel>
@@ -108,7 +90,7 @@ export default function Register() {
               />
               <FormField
                 control={form.control}
-                name="members.1.email"
+                name="members.0.email"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Team member 1 email</FormLabel>
@@ -123,7 +105,7 @@ export default function Register() {
             <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4 border-gray-800">
               <FormField
                 control={form.control}
-                name="members.2.name"
+                name="members.1.name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Team member 2 name</FormLabel>
@@ -136,7 +118,7 @@ export default function Register() {
               />
               <FormField
                 control={form.control}
-                name="members.2.email"
+                name="members.1.email"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Team member 2 email</FormLabel>
@@ -148,7 +130,35 @@ export default function Register() {
                 )}
               />
             </div>
-            <button disabled={ form.formState.isSubmitting} className="w-full box__link button-animation text-sm" type="submit">
+            <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4 border-gray-800">
+              <FormField
+                control={form.control}
+                name="members.2.name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 3 name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Meowth" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="members.2.email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 3 email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="meowth@team.rocket" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <button disabled={!form.formState.isValid || form.formState.disabled} className="w-full box__link button-animation" type="submit">
               Create account
             </button>
           </form>
