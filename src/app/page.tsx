@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="min-h-screen  flex items-center justify-center relative overflow-hidden"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -116,20 +116,9 @@ export default function Home() {
             EvEnt TimElinE
           </h2>
           <div className="max-w-3xl mx-auto space-y-8">
-            {[
-              {
-                time: "25th january",
-                event: "Registration & Check-in",
-                icon: Users,
-              },
-              {
-                time: "1st February",
-                event: "Submission Deadline",
-                icon: Clock,
-              },
-              { time: "Mode", event: "Online", icon: Code },
-              // { time: '11:00 PM', event: 'Project Submission', icon: ScrollText },
-              // { time: '12:00 PM', event: 'Closing Ceremony', icon: Send },
+            {[{ time: "25th january",event: "Registration & Check-in",icon: Users},
+              { time: "1st February", event: "Submission Deadline", icon: Clock},
+              { time: "Mode", event: "Online", icon: Code }
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 flex items-center justify-center">
@@ -150,30 +139,24 @@ export default function Home() {
       {/* ---------------------------------------------------------------RULES--------------------------------------------- */}
 
       <section id="rules" className="py-20 px-4">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             RulEs and GuidElinEs
           </h2>
-          <div className="grid md:grid-cols-2">
-            <Card className=" flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between">
+            <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 General Rules
               </h3>
               <ul className="flex-1 flex flex-col  text-gray-300">
                 <li className="flex-1">👥 Team size: 3 members</li>
-                <li className="flex-1">
-                  🏫 All team members must be from JGEC
-                </li>
-                <li className="flex-1">
-                  🔗 Use of third-party APIs is allowed
-                </li>
+                <li className="flex-1">🏫 All team members must be from JGEC</li>
+                <li className="flex-1">🔗 Use of third-party APIs is allowed</li>
                 <li className="flex-1">📝 Project must be original work</li>
-                <li className="flex-1">
-                  📂 Code must be submitted to GitHub/GitLab/SourceForge/Gitea
-                </li>
+                <li className="flex-1">📂 Code must be submitted to GitHub/GitLab/SourceForge/Gitea</li>
               </ul>
             </Card>
-            <Card className="flex flex-col  p-6 card2 bg-gray-900/50 border-gray-800">
+            <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Judging Criteria
               </h3>
@@ -190,7 +173,7 @@ export default function Home() {
 
       {/* --------------------------------------------------------sponsors------------------------------------------- */}
       <section id="sponsors" className="py-20 px-4">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             SPonSorS
           </h2>
