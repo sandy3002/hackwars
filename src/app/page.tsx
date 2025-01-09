@@ -50,8 +50,8 @@ export default function Home() {
           <Image
             src={logo}
             alt="Hack Wars Logo"
-            width={300}
-            height={300}
+            width={450}
+            height={450}
             className="mx-auto mb-8"
           />
           <h1 className="btn-shine font-['Starjedi'] tracking-widest text-2xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-emerald-400 text-transparent bg-clip-text">
@@ -104,7 +104,6 @@ export default function Home() {
                 <li className="flex-1">💼 Build your portfolio</li>
               </ul>
             </Card>
-            {/* </div></main> */}
           </div>
         </div>
       </section>
@@ -156,19 +155,25 @@ export default function Home() {
             RulEs and GuidElinEs
           </h2>
           <div className="grid md:grid-cols-2 gap-8  mx-auto">
-            <Card className="flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
+            <Card className=" flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 General Rules
               </h3>
               <ul className="flex-1 flex flex-col  text-gray-300">
-                <li className="flex-1">👥 Team size: 2-4 members</li>
-                <li className="flex-1">🏫 All team members must be from the same college</li>
-                <li className="flex-1">🔗 Use of third-party APIs is allowed</li>
+                <li className="flex-1">👥 Team size: 3 members</li>
+                <li className="flex-1">
+                  🏫 All team members must be from JGEC
+                </li>
+                <li className="flex-1">
+                  🔗 Use of third-party APIs is allowed
+                </li>
                 <li className="flex-1">📝 Project must be original work</li>
-                <li className="flex-1">📂 Code must be submitted to GitHub</li>
+                <li className="flex-1">
+                  📂 Code must be submitted to GitHub/GitLab/SourceForge/Gitea
+                </li>
               </ul>
             </Card>
-            <Card className="flex flex-col p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
+            <Card className="flex flex-col  p-6 lg:max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Judging Criteria
               </h3>
@@ -178,6 +183,37 @@ export default function Home() {
                 <li className="flex-1">🌍 Practicality & Impact (25%)</li>
                 <li className="flex-1">🗣️ Presentation (20%)</li>
               </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------------sponsors------------------------------------------- */}
+      <section id="sponsors" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
+            SPonSorS
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 ">
+            <Card className="p-8 m-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2">
+              <Image
+                src={logo}
+                alt="Hack Wars Logo"
+                width={300}
+                height={300}
+                className="mx-auto mb-8"
+              />{" "}
+              <p className="text-center font-mono text-xl ">.xyz</p>
+            </Card>
+            <Card className=" p-8 m-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2">
+            <Image
+                src={logo}
+                alt="Hack Wars Logo"
+                width={300}
+                height={300}
+                className="mx-auto mb-8"
+              />{" "}
+              <p className="text-center font-mono text-xl ">.xyz</p>
             </Card>
           </div>
         </div>

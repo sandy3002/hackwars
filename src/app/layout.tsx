@@ -41,6 +41,10 @@ const navLinks:NavType[]=[
     link:"/#rules"
   },
   {
+    name:"Sponsors",
+    link:"/#sponsors"
+  },
+  {
     name:"Register",
     link:"/register"
   },
@@ -56,7 +60,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased bg-repeat bg-[#0A1A1A]`}
       >
-        <div className="bg-[url('../images/bg.png')] text-white">
+        <div className="bg-[url('../images/bg.png')] bg-fixed text-white">
           <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b border-gray-800">
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16">

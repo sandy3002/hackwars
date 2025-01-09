@@ -30,7 +30,7 @@ html {
   --clr-1: #2563eb;
   /*  #2563eb
       #10b981 */
-  --clr-2: #6420aa;
+  --clr-2: #10b981;
   --clr-3: #10b981;
 
 }
@@ -168,12 +168,8 @@ body {
   backdrop-filter: blur(20px);
   /* position: absolute; */
   margin: auto;
-  /* left: 0; */
-  /* right: 0; */
-  /* top: 0; */
-  /* bottom: 0; */
-  border-radius: 8px;
-  box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  box-shadow: 20px 40px 22px rgba(0, 0, 0, 0.2);
   font-family: "Poppins", sans-serif;
 }
 
@@ -183,22 +179,15 @@ body {
 
 
 
-
-main {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .card2 {
   position: relative;
+  
   /* height: 24rem;
   width: 16rem; */
   border-radius: 0.45rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   background-color: var(--clr-card);
+  
 }
 
 .card2::after,
@@ -206,7 +195,7 @@ main {
   content: " ";
   position: absolute;
   z-index: -1;
-  inset: -0.5rem;
+  inset: -0.2rem;
   background: conic-gradient(
     from var(--gradient-angle),
     var(--clr-card),
@@ -217,19 +206,78 @@ main {
     var(--clr-1),
     var(--clr-card)
   );
+
   border-radius: inherit;
   animation: rotate 2.5s linear infinite;
 }
 
 .card2::after {
-  filter: blur(3rem);
+  filter: blur(0.8rem);
+  
 }
 
 @keyframes rotate {
   0% {
-    --gradient-angle: 0deg;
+    --gradient-angle: -90deg;
+  }
+  90% {
+    --gradient-angle: 100deg;
   }
   100% {
     --gradient-angle: 360deg;
   }
 }
+
+
+
+
+/* -----------------------------footer */
+
+
+.polygonshape{
+  position: relative;
+  inset: -0.5rem;
+
+  /* -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  inset: 0;
+  overflow: hidden; */
+
+  clip-path: polygon(2% 0, 98% 0, 100% 5%, 100% 80%, 98% 85%, 85% 85%, 75% 85%, 60% 100%, 2% 100%, 0 95%, 0 5%); 
+  /* background: linear-gradient(156deg, rgba(239, 237, 239, 0.04) 0%, rgba(0, 0, 0, 0.04) 92.30%); */
+  /* border-style: solid 2px #fff; */
+}
+
+
+
+.foot4 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(156deg, rgba(239, 237, 239, 0.04) 0%, rgba(0, 0, 0, 0.04) 92.30%);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: -1;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+  
+ 
+.polygonshape::before,
+.polygonshape::after {
+  content: '';
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+
+}
+
+
+  .polygonshape::before,
+  .polygonshape::after {
+    z-index: -1;
+
+    inset: -0.5rem;
+    -webkit-clip-path: polygon(2% 0, 98% 0, 100% 5%, 100% 80%, 98% 85%, 85% 85%, 75% 85%, 60% 100%, 2% 100%, 0 95%, 0 5%);
+    clip-path: polygon(2% 0, 98% 0, 100% 5%, 100% 80%, 98% 85%, 85% 85%, 75% 85%, 60% 100%, 2% 100%, 0 95%, 0 5%);
+  }
