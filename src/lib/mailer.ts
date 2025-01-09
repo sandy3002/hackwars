@@ -1,4 +1,4 @@
 import nodemailer from "nodemailer";
-let congigOptions = {
+const congigOptions = {
     
 }
