@@ -49,7 +49,8 @@ export default function Register() {
   }
   return (
     <div className="flex min-h-screen md:m-16 items-center">
-      <Card className="max-w-[500px] sm:w-[75%] w-[95%] backdrop-blur-md mx-auto bg-gray-900/10">
+      <div className="max-w-[500px] sm:w-[75%] w-[95%] mx-auto card4 align-middle" >
+      <Card className=" backdrop-blur-md bg-gray-900">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(submit)}
@@ -164,6 +165,7 @@ export default function Register() {
           </form>
         </Form>
       </Card>
+      </div>
     </div>
   );
 }

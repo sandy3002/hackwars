@@ -148,7 +148,7 @@ body {
 
 .btn-shine {
   color: #ffffff;
-  background: linear-gradient(to right, #7a7a7a 0, white 10%, #4d4d4d 30%);
+  background: linear-gradient(to right, #079ad4 0, rgb(189, 189, 189) 10%, #079ad4 30%);
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -163,7 +163,7 @@ body {
   0% {
     background-position: 0;
   }
-  90% {
+  100% {
     background-position: 200vw;
   }
 
@@ -277,3 +277,116 @@ body {
     }
   }
 }
+
+
+/*--------------------------------------------sponsor glow------------------------ */
+
+.card3 {
+  position: relative;
+  
+  /* height: 20rem;
+  width: 20rem; */
+  border-radius: 0.45rem;
+  /* cursor: pointer; */
+  background-color: var(--clr-card);
+  
+}
+
+.card3::after,
+.card3::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -0.1rem;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    #d20069,
+    #6400d0,
+    #6400d0,
+    #d20069,
+    var(--clr-card)
+  );
+
+  border-radius: inherit;
+  animation: rotation 5s linear infinite;
+}
+
+.card3::after {
+  filter: blur(1.5rem);
+  
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+
+
+.card4 {
+  position: relative;
+  
+  /* height: 20rem;
+  width: 20rem; */
+  border-radius: 0.65rem;
+  /* cursor: pointer; */
+  /* background-color: var(--clr-card); */
+  
+}
+
+.card4::after,
+.card4::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    #d20069,
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    #6400d0,
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card),
+    var(--clr-card)
+  );
+
+  border-radius: inherit;
+  animation: rotation 5s linear infinite;
+}
+
+.card4::after {
+  filter: blur(1.5rem);
+  
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calendar, Clock, Users, ScrollText, Send, Code } from "lucide-react";
 import logo from "../images/logo.png";
+import xyz from "../images/xyz.png";
 import { useRouter } from "next/navigation";
 
 // import styles from './styles.css'
@@ -178,26 +179,30 @@ export default function Home() {
             SPonSorS
           </h2>
           <div className="grid md:grid-cols-2 gap-8 ">
-            <Card className="p-8 m-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2">
-              <Image
-                src={logo}
-                alt="Hack Wars Logo"
-                width={300}
-                height={300}
-                className="mx-auto mb-8"
-              />{" "}
-              <p className="text-center font-mono text-xl ">.xyz</p>
-            </Card>
-            <Card className=" p-8 m-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2">
-            <Image
-                src={logo}
-                alt="Hack Wars Logo"
-                width={300}
-                height={300}
-                className="mx-auto mb-8"
-              />{" "}
-              <p className="text-center font-mono text-xl ">.xyz</p>
-            </Card>
+            <div className="card3 p-8 m-auto ">
+              {/* <Card className="p-8 m-auto  backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
+                <Image
+                  src={xyz}
+                  alt="Hack Wars Logo"
+                  width={300}
+                  height={300}
+                  className="mx-auto"
+                />{" "}
+                {/* <p className="text-center font-mono text-xl ">.xyz</p> */}
+              {/* </Card> */}
+            </div>
+            <div className="card3 p-8 m-auto ">
+              {/* <Card className=" p-8 m-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
+                <Image
+                  src={logo}
+                  alt="Hack Wars Logo"
+                  width={300}
+                  height={300}
+                  className="mx-auto mb-8"
+                />{" "}
+                <p className="text-center font-mono text-xl ">.xyz</p>
+              {/* </Card> */}
+            </div>
           </div>
         </div>
       </section>
