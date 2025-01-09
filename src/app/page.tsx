@@ -58,14 +58,14 @@ export default function Home() {
             CodE. CrEatE.
             <br /> ConquEr...
           </h1>
-          <Button
+          <button
             onClick={() => {
               r.push("/register");
             }}
-            className="bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white px-8 py-6 text-lg"
+            className="box__link button-animation px-8 py-6 text-lg"
           >
             Register Now
-          </Button>
+          </button>
         </div>
       </section>
 

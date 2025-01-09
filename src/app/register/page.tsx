@@ -148,9 +148,9 @@ export default function Register() {
                 )}
               />
             </div>
-            <Button disabled={ form.formState.isSubmitting} className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white" type="submit">
+            <button disabled={ form.formState.isSubmitting} className="w-full box__link button-animation text-sm" type="submit">
               Create account
-            </Button>
+            </button>
           </form>
         </Form>
       </Card>
