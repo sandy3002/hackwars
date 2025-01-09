@@ -1,7 +1,4 @@
 "use client";
-
-import Image from "next/image";
-import logo from "../../images/logo.png";
 import { redirect, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -18,28 +15,41 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-function handleSubmit(team: Team) {
-  saveTeam(team);
+async function submit(team: Team) {
+  console.log("here");
+  
+  await saveTeam(team);
   redirect("/");
 }
 export default function Register() {
-  const form = useForm<Team>({ resolver: zodResolver(teamSchema) });
+  const form = useForm<Team>({ 
+    resolver: zodResolver(teamSchema),
+    defaultValues:{
+      id: "",
+      createdAt: 0,
+      members: [
+        {name: "",email:""},
+        {name: "",email:""},
+        {name: "",email:""}
+      ]
+    }
+   });
   return (
-    <div className="pt-40 ">
-      <Card className="w-1/3 backdrop-blur-md mx-auto px-4 bg-gray-900/10">
+    <div className="flex min-h-screen m-16 items-center">
+      <Card className="max-w-[500px] sm:w-[75%] backdrop-blur-md mx-auto bg-gray-900/10">
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(handleSubmit)}
-            className="p-6 space-y-6 container mx-auto px-4"
+            onSubmit={form.handleSubmit(submit)}
+            className="space-y-6 container mx-auto p-8"
           >
-            <h1 className="text-4xl font-bold mb-10 mt-10 text-center font-['Starjedi'] tracking-widest text-white animate-pulse">
+            <h1 className="sm:text-3xl text-xl font-bold mb-10 text-center font-['Starjedi'] tracking-widest text-white animate-pulse">
               Register your team!
             </h1>
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem className="px-4  border-gray-800">
+                <FormItem className="border-gray-800">
                   <FormLabel>Team Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Team Rocket" {...field} />
@@ -48,7 +58,35 @@ export default function Register() {
                 </FormItem>
               )}
             />
-            <div className="grid grid-cols-2 gap-4 px-4  border-gray-800">
+            <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4 border-gray-800">
+              <FormField
+                control={form.control}
+                name="members.0.name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 3 name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Meowth" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="members.0.email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Team member 3 email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="meowth@team.rocket" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4 border-gray-800">
               <FormField
                 control={form.control}
                 name="members.1.name"
@@ -76,7 +114,7 @@ export default function Register() {
                 )}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4 px-4  border-gray-800">
+            <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4 border-gray-800">
               <FormField
                 control={form.control}
                 name="members.2.name"
@@ -98,34 +136,6 @@ export default function Register() {
                     <FormLabel>Team member 2 email</FormLabel>
                     <FormControl>
                       <Input placeholder="james@team.rocket" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4 px-4 pb-6 border-gray-800">
-              <FormField
-                control={form.control}
-                name="members.3.name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Team member 3 name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Meowth" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="members.3.email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Team member 3 email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="meowth@team.rocket" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
