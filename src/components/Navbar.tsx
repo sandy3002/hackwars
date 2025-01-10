@@ -16,10 +16,9 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
-import logo from "../images/logo.png"
 
 const navigationItems = [
-  { title: "Home", href: "/#home" },
+  { title: "Home", href: "/" },
   { title: "About", href: "/#about" },
   { title: "Timeline", href: "/#timeline" },
   { title: "Rules", href: "/#rules" },
@@ -36,7 +35,7 @@ export function Navbar() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold sm:inline-block px-6">
               <Image
-                  src={logo}
+                  src="/assets/logo.svg"
                   alt="Hack Wars Logo"
                   width={40}
                   height={40}

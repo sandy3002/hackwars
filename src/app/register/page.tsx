@@ -31,7 +31,7 @@ export default function Register() {
   async function submit(team: Team,) {
     const resp = await saveTeam(team);
     if(resp == null){
-      console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a free .xyz domain!");
+      console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a gift!");
       toast({
         title: "Successfully registered!",
         description: "A mail has been sent.",
@@ -49,7 +49,9 @@ export default function Register() {
   }
   return (
     <div className="flex min-h-screen md:mx-16 items-center">
-      <Card className="max-w-[500px] sm:w-[75%] w-[95%] backdrop-blur-md mx-auto bg-gray-900/10">
+      <div className="max-w-[500px] sm:w-[75%] w-[95%] mx-auto align-middle card4">
+
+      <Card className="backdrop-blur-md bg-gray-900">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(submit)}
@@ -164,6 +166,7 @@ export default function Register() {
           </form>
         </Form>
       </Card>
+      </div>
     </div>
   );
 }
