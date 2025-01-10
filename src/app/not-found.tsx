@@ -14,7 +14,7 @@ function Page() {
         },2500);
     },[]);
   return (
-    <div className="font-['MicroSS'] w-full p-36">
+    <div className="font-MicroSS w-full px-36 py-20">
         <div className="text-9xl">{":("}</div>
         <div className="flex py-10 flex-col-reverse md:flex-row">
             <div className="pr-10">

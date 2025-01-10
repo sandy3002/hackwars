@@ -24,6 +24,7 @@ const navigationItems = [
   { title: "Rules", href: "/#rules" },
   { title: "Sponsors", href: "/#sponsors" },
   { title: "Register", href: "/register" },
+  { title: "Team", href: "/team" },
 ]
 
 export function Navbar() {

@@ -73,50 +73,55 @@ export default function Home() {
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             About ThE EvEnt
           </h2>
-          <div className="flex flex-col md:flex-row justify-between">
-            <Card className="p-6 flex-1 max-w-2xl card2 bg-gray-900/50 border-gray-800">
-              <h3 className="text-2xl font-bold mb-4 text-emerald-400">
-                What is Hack Wars?
-              </h3>
-              <p className="text-gray-300">
-                HackWars 2025 is proudly the first intra-college hackathon of
-                Jalpaiguri Government Engineering College (JGEC), a platform
-                where innovation meets implementation. <br />
-                <br />
-                This event will bring together talented students to brainstorm,
-                collaborate, and develop technologydriven solutions to
-                real-world problems. With a focus on creativity, problem-solving
-                and technical expertise, this hackathon is an opportunity to
-                foster a culture of innovation within our campus.
-              </p>
-            </Card>
-            <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
-              <h3 className="text-2xl font-bold mb-4 text-emerald-400">
-                Why Participate?
-              </h3>
-              <ul className="flex-1 flex-col flex text-gray-300">
-                <li className="flex-1">🚀 Showcase your technical skills</li>
-                <li className="flex-1">🤝 Network with fellow developers</li>
-                <li className="flex-1">🏆 Win exciting prizes</li>
-                <li className="flex-1">📚 Learn new technologies</li>
-                <li className="flex-1">💼 Build your portfolio</li>
-              </ul>
-            </Card>
+          {/* <div className="card3 "> */}
+          <div className="foot4 w-full md:w-3/4 mx-auto p-8">
+            <div className="flex flex-col space-y-8 p-4">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-emerald-400">
+                  What is Hack Wars?
+                </h3>
+                <p className="text-gray-300">
+                  🚀 HackWars 2025 is proudly the first intra-college hackathon of
+                  Jalpaiguri Government Engineering College (JGEC), a platform
+                  where innovation meets implementation.
+                </p>
+                <p className="text-gray-300">
+                  This event will bring together talented students to brainstorm🤯,
+                  collaborate👥, and develop🔧 technology-driven solutions to
+                  real-world problems. With a focus on creativity, problem-solving
+                  and technical expertise, this hackathon is an opportunity to
+                  foster a culture of innovation within our campus.✨
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-emerald-400">
+                  Why Participate?
+                </h3>
+                <ul className="flex-1 flex-col flex text-gray-300">
+                  <li className="flex-1">🚀 Showcase your technical skills</li>
+                  <li className="flex-1">🤝 Network with fellow developers</li>
+                  <li className="flex-1">🏆 Win exciting prizes</li>
+                  <li className="flex-1">📚 Learn new technologies</li>
+                  <li className="flex-1">💼 Build your portfolio</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+        {/* </div> */}
+      </section >
 
       {/* ---------------------------------------------------------------TIMELINE--------------------------------------------- */}
 
-      <section id="timeline" className="py-20 bg-gray-900/30">
+      < section id="timeline" className="py-20 bg-gray-900/30" >
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             EvEnt TimElinE
           </h2>
           <div className="max-w-3xl mx-auto space-y-8">
-            {[{ time: "25th january",event: "Registration & Check-in",icon: Users},
-              { time: "1st February", event: "Submission Deadline", icon: Clock},
-              { time: "Mode", event: "Online", icon: Code }
+            {[{ time: "25th january", event: "Registration & Check-in", icon: Users },
+            { time: "1st February", event: "Submission Deadline", icon: Clock },
+            { time: "Mode", event: "Online", icon: Code }
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 flex items-center justify-center">
@@ -132,11 +137,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ---------------------------------------------------------------RULES--------------------------------------------- */}
 
-      <section id="rules" className="py-20 px-4">
+      < section id="rules" className="py-20 px-4" >
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             RulEs and GuidElinEs
@@ -151,7 +156,7 @@ export default function Home() {
                 <li className="flex-1">🏫 All team members must be from JGEC</li>
                 <li className="flex-1">🔗 Use of third-party APIs is allowed</li>
                 <li className="flex-1">📝 Project must be original work</li>
-                <li className="flex-1">📂 Code must be submitted to GitHub/GitLab/SourceForge/Gitea</li>
+                <li className="flex-1">📂 Code must be submitted to GitHub / GitLab / SourceForge / Gitea</li>
               </ul>
             </Card>
             <div className="md:h-6"></div>
@@ -168,42 +173,40 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* --------------------------------------------------------sponsors------------------------------------------- */}
-      <section id="sponsors" className="py-20 px-4">
+      < section id="sponsors" className="py-20 px-4" >
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             SPonSorS
           </h2>
           <div className="grid md:grid-cols-2 gap-8 ">
             <div className="card3 p-8 m-auto ">
-              {/* <Card className="p-8 m-auto  backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
-                <Image
-                  src={"/images/xyz.png"}
-                  alt="Hack Wars Logo"
-                  width={300}
-                  height={300}
-                  className="mx-auto"
-                />{" "}
-                {/* <p className="text-center font-mono text-xl ">.xyz</p> */}
-              {/* </Card> */}
+
+              <Image
+                src={"/images/xyz.png"}
+                alt="Hack Wars Logo"
+                width={300}
+                height={300}
+                className="mx-auto"
+              />{" "}
+              <p className="text-center font-mono text-xl ">.xyz</p>
+
             </div>
             <div className="card3 p-8 m-auto ">
-              {/* <Card className=" p-8 logom-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
-                <Image
-                  src="/images/xyz.png"
-                  alt="Hack Wars Logo"
-                  width={300}
-                  height={300}
-                  className="mx-auto mb-8"
-                />{" "}
-                <p className="text-center font-mono text-xl ">.xyz</p>
-              {/* </Card> */}
+              <Image
+                src="/images/logo.png"
+                alt="Hack Wars Logo"
+                width={300}
+                height={300}
+                className="mx-auto mb-8"
+              />{" "}
+              <p className="text-center font-mono text-xl ">HackWars</p>
             </div>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }
