@@ -47,6 +47,10 @@ const navLinks:NavType[]=[
     name:"Register",
     link:"/register"
   },
+  {
+    name:"Team",
+    link:"/team"
+  },
 ]
 
 export default function RootLayout({

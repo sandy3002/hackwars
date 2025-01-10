@@ -67,7 +67,7 @@ export default function Register() {
                 <FormItem className="border-gray-800">
                   <FormLabel>Team Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Team Rocket" {...field} />
+                    <Input placeholder="Team Rocket 🚀" {...field} />
                   </FormControl>
                   <FormDescription>
                     Minimum 4 characters. This name will be displayed to the public.
@@ -84,7 +84,7 @@ export default function Register() {
                   <FormItem>
                     <FormLabel>Team member 1 name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Jessie" {...field} />
+                      <Input placeholder="Jessie 💃" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -112,7 +112,7 @@ export default function Register() {
                   <FormItem>
                     <FormLabel>Team member 2 name</FormLabel>
                     <FormControl>
-                      <Input placeholder="James" {...field} />
+                      <Input placeholder="James 🕺" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -140,7 +140,7 @@ export default function Register() {
                   <FormItem>
                     <FormLabel>Team member 3 name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Meowth" {...field} />
+                      <Input placeholder="Meowth 😼" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

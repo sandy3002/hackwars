@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			MicroSS: ['"MicroSS"', 'sans-serif'],
+		  },
 		backgroundImage: {
 			'noise': "url('/src/images/bg.png')",
 		},
