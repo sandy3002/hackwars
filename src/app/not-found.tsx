@@ -1,7 +1,7 @@
 import Image from "next/image"
 function Page() {
   return (
-    <div className=`w-full p-36 font-["MicroSS"]`>
+    <div className="w-full p-36 font-["MicroSS"]">
         <div className="text-9xl">{":("}</div>
         <div className="flex py-10 flex-col-reverse md:flex-row">
             <div className="pr-10">
