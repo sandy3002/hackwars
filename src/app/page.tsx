@@ -62,7 +62,7 @@ export default function Home() {
             }}
             className="box__link button-animation px-8 py-6 text-lg"
           >
-            Registration starts soon....
+            Register now!
           </button>
         </div>
       </section>

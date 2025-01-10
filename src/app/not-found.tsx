@@ -1,20 +1,33 @@
+
+"use client";
 import Image from "next/image"
+import { useEffect, useState } from "react";
+
+function randomPercent(): number{
+    return Math.floor(Math.random()*100)
+}
 function Page() {
+    const [percentage,setPercent] = useState(20);
+    useEffect(()=>{
+        setInterval(()=>{
+            setPercent(randomPercent());
+        },2500);
+    },[]);
   return (
-    <div className="w-full p-36 font-["MicroSS"]">
+    <div className="font-['MicroSS'] w-full p-36">
         <div className="text-9xl">{":("}</div>
         <div className="flex py-10 flex-col-reverse md:flex-row">
             <div className="pr-10">
                 <div className="text-3xl font-thin pb-10">
-                Your PC ran into a problem and needs to chill out. We're just collecting some personal information info, and then you can go.
+                Your PC ran into a problem and needs to chill out. We are just collecting some personal information, your IP address, location, incognito search data<br/> and then you can go.
                 </div>
                 <div className="text-3xl font-thin pt-10">
-                20% Complete
+                {percentage}% Complete
                 </div>
                 <div className="flex pt-11">
                     <Image
-                    src="/assets/qr.svg"
-                    alt="Windows 10 logo"
+                    src="/images/qr.png"
+                    alt="QR"
                     width={150}
                     height={150}
                     className="pr-6"/>
@@ -25,7 +38,7 @@ function Page() {
                 </div>
             </div>
             <Image
-                src="/images/windows 10.png"
+                src="/images/windows.png"
                 alt="Windows 10 logo"
                 width={300}
                 height={284}
