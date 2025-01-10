@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Image from 'next/image'
-import logo from "../images/logo.png"
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/Navbar";
@@ -61,13 +59,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased bg-repeat bg-[#0A1A1A]`}
       >
-        <div className="bg-[url('../images/bg.png')] bg-fixed text-white">
+        <div className="bg-[url('/images/bg.png')] bg-fixed text-white">
          <Navbar/>
-          <div className="min-h-screen ">
           {children}
-          </div>
           <footer className="py-4 border-t border-gray-800 backdrop-blur-lg">
-                <div className="container mx-auto px-4 text-center text-gray-400">
+                <div className="container mx-auto text-center text-gray-400">
                     <p>© 2024 Hack Wars. All rights reserved.</p>
                 </div>
             </footer>

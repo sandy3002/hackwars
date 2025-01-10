@@ -140,7 +140,13 @@ body {
 
 @font-face {
   font-family: "Starjedi";
-  src: url("../../fonts/Starjedi.ttf");
+  src: url("/fonts/Starjedi.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MicroSS";
+  src: url("/fonts/micross.ttf");
   font-weight: normal;
   font-style: normal;
 }

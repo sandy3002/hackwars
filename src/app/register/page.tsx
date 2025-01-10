@@ -31,7 +31,7 @@ export default function Register() {
   async function submit(team: Team,) {
     const resp = await saveTeam(team);
     if(resp == null){
-      console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a free .xyz domain!");
+      console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a gift!");
       toast({
         title: "Successfully registered!",
         description: "A mail has been sent.",

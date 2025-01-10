@@ -5,8 +5,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calendar, Clock, Users, ScrollText, Send, Code } from "lucide-react";
-import logo from "../images/logo.png";
-import xyz from "../images/xyz.png";
 import { useRouter } from "next/navigation";
 
 // import styles from './styles.css'
@@ -48,7 +46,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 text-center relative z-10">
           <Image
-            src={logo}
+            src="/assets/logo.svg"
             alt="Hack Wars Logo"
             width={450}
             height={450}
@@ -64,7 +62,7 @@ export default function Home() {
             }}
             className="box__link button-animation px-8 py-6 text-lg"
           >
-            Register Now
+            Registration starts soon....
           </button>
         </div>
       </section>
@@ -182,7 +180,7 @@ export default function Home() {
             <div className="card3 p-8 m-auto ">
               {/* <Card className="p-8 m-auto  backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
                 <Image
-                  src={xyz}
+                  src={"/images/xyz.png"}
                   alt="Hack Wars Logo"
                   width={300}
                   height={300}
@@ -192,9 +190,9 @@ export default function Home() {
               {/* </Card> */}
             </div>
             <div className="card3 p-8 m-auto ">
-              {/* <Card className=" p-8 m-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
+              {/* <Card className=" p-8 logom-auto backdrop-blur-sm bg-gray-900/50 border-emerald-800 border-2"> */}
                 <Image
-                  src={logo}
+                  src="/images/xyz.png"
                   alt="Hack Wars Logo"
                   width={300}
                   height={300}
