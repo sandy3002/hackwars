@@ -156,6 +156,7 @@ export default function Home() {
                 <li className="flex-1">📂 Code must be submitted to GitHub/GitLab/SourceForge/Gitea</li>
               </ul>
             </Card>
+            <div className="md:h-6"></div>
             <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 Judging Criteria

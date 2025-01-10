@@ -19,7 +19,7 @@ import Image from "next/image"
 import logo from "../images/logo.png"
 
 const navigationItems = [
-  { title: "Home", href: "/#home" },
+  { title: "Home", href: "/" },
   { title: "About", href: "/#about" },
   { title: "Timeline", href: "/#timeline" },
   { title: "Rules", href: "/#rules" },
