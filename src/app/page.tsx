@@ -116,11 +116,11 @@ export default function Home() {
       < section id="timeline" className="py-20 bg-gray-900/30" >
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
-            EvEnt TimElinE
+            EvEnt Details
           </h2>
           <div className="max-w-3xl mx-auto space-y-8">
-            {[{ time: "25th january", event: "Registration & Check-in", icon: Users },
-            { time: "1st February", event: "Submission Deadline", icon: Clock },
+            {[{ time: "10th February", event: "Registration & Check-in", icon: Users },
+            { time: "17th February", event: "Submission Deadline", icon: Clock },
             { time: "Mode", event: "Online", icon: Code }
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-4">
@@ -146,8 +146,8 @@ export default function Home() {
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             RulEs and GuidElinEs
           </h2>
-          <div className="flex flex-col md:flex-row justify-between">
-            <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
+          <div className="flex flex-col gap-10 md:flex-row justify-center">
+            <Card className="flex flex-1 flex-col p-6 max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">
                 General Rules
               </h3>
@@ -159,11 +159,8 @@ export default function Home() {
                 <li className="flex-1">📂 Code must be submitted to GitHub / GitLab / SourceForge / Gitea</li>
               </ul>
             </Card>
-            <div className="md:h-6"></div>
-            <Card className="flex flex-1 flex-col p-6 max-w-2xl card2 bg-gray-900/50 border-gray-800">
-              <h3 className="text-2xl font-bold mb-4 text-emerald-400">
-                Judging Criteria
-              </h3>
+            <Card className="flex flex-1 flex-col p-6 max-w-xl card2 bg-gray-900/50 border-gray-800">
+              <h3 className="text-2xl font-bold mb-4 text-emerald-400">Judging Criteria</h3>
               <ul className="flex-1 flex flex-col text-gray-300">
                 <li className="flex-1">💡 Innovation & Creativity (30%)</li>
                 <li className="flex-1">🔧 Technical Complexity (25%)</li>
@@ -181,28 +178,26 @@ export default function Home() {
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             SPonSorS
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 ">
-            <div className="card3 p-8 m-auto ">
-
+          <div className="flex justify-center gap-10">
+            <div className="card3 flex justify-center items-center rounded-md">
               <Image
-                src={"/images/xyz.png"}
-                alt="Hack Wars Logo"
-                width={300}
-                height={300}
-                className="mx-auto"
-              />{" "}
-              <p className="text-center font-mono text-xl ">.xyz</p>
+                src={"/assets/xyz.svg"}
+                alt="xyz Logo"
+                width={160}
+                height={100}
+                className="mx-auto bg-white p-4 rounded-md"
+              />
 
             </div>
-            <div className="card3 p-8 m-auto ">
+            <div className="card3 rounded-md">
               <Image
-                src="/images/logo.png"
-                alt="Hack Wars Logo"
-                width={300}
-                height={300}
-                className="mx-auto mb-8"
-              />{" "}
-              <p className="text-center font-mono text-xl ">HackWars</p>
+                src={"/images/g30.png"}
+                alt="InterviewBuddy Logo"
+                width={200}
+                height={100}
+                className="w-auto rounded-md"
+              />
+
             </div>
           </div>
         </div>
