@@ -42,7 +42,6 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
             user: adminMail,
             pass: adminPass,
         },
-        secure:true,
         port:587
     });
     const mailOptions :Mail.Options = {
