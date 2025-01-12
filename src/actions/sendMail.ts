@@ -36,7 +36,7 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
     const adminMail = process.env.EMAIL
     const adminPass = process.env.EMAIL_PASS
     const transporter = nodemailer.createTransport({
-        // host:'smtp.gmail.com',
+        host:'smtp.gmail.com',
         service:"gmail",
         auth:{
             user: adminMail,
@@ -46,7 +46,6 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
     });
     const mailOptions :Mail.Options = {
         from: adminMail,
-        sender:"HackWars | JGEC",
         to: member.email,
         subject: SUBJECT,
         html: getBody(member.name,teamName,teamId),
