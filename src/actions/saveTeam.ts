@@ -39,7 +39,7 @@ export async function saveTeam(team: Team) : Promise<string | void>{
     }
     try{
         // mail(team.members[0],team.name,team.id);
-        mailTeamMembers(team)
+        await mailTeamMembers(team)
     }catch(e){
         console.log(e);
         return "Succesfully registered. Couldn't send mail. Please contact us :("
@@ -47,7 +47,7 @@ export async function saveTeam(team: Team) : Promise<string | void>{
 }
 
 async function mailTeamMembers(team: Team){
-    for (let i = 0; i < 3; i++) {
-        await mail(team.members[i],team.name, team.id)
+    for (let i = 0; i < 1; i++) {
+        await mail(team.members[i],team)
     }
 }
