@@ -36,12 +36,13 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
     const adminMail = process.env.EMAIL
     const adminPass = process.env.EMAIL_PASS
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host:'smtp.gmail.com',
         auth:{
             user: adminMail,
             pass: adminPass,
         },
-        secure:true
+        secure:true,
+        port:465
     });
     const mailOptions :Mail.Options = {
         from: adminMail,
