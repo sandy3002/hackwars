@@ -40,7 +40,10 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
         auth:{
             user: adminMail,
             pass: adminPass,
-        }
+        },
+        tls: {
+            ciphers: "SSLv3",
+        },
     });
     const mailOptions :Mail.Options = {
         from: adminMail,
