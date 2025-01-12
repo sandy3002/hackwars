@@ -167,7 +167,7 @@ export default function Register() {
               />
             </div>
             <button disabled={!formState.isValid || formState.disabled || formLoading} className="w-full box__link button-animation" type="submit">
-              {!formLoading?"Create account":<Spinner className="bg-white"/>}
+              {!formLoading?"Create account":<Spinner variant={"muted"}/>}
             </button>
           </form>
         </Form>
