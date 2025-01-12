@@ -43,5 +43,6 @@ const TeamCard = React.forwardRef<HTMLDivElement, OrganizerProps>(
     </div>
   )
 })
+TeamCard.displayName="TeamCard"
 
 export default TeamCard

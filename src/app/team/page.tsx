@@ -28,7 +28,7 @@ const organizers : Organizer[] = [
 	{
 		name: "ubuntu",
 		description:"Cat",
-		email: "Error404",
+		email: "hackwars.jgec@gmail.com",
 		linkedin: null,
 		github: null,
 		image: "/assets/ubuntu.webp"
@@ -42,7 +42,7 @@ function TeamPage() {
             Meet our Team!
         </h1>
 		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
-			{organizers.map((e)=><TeamCard className="w-[20rem] h-[30rem]" info={e}/>)}
+			{organizers.map((e)=><TeamCard key={e.name} className="w-[20rem] h-[30rem]" info={e}/>)}
 		</div>
 	</div>
   )
