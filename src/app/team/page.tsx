@@ -3,6 +3,9 @@ import { useRouter } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+
+import TeamCard from "@/components/TeamCard";
+
 export default function Register() {
   const {toast} = useToast();
   const router = useRouter();
@@ -10,6 +13,10 @@ export default function Register() {
     
 <div className="container items-center justify-center ">
 	<div className="mx-auto w-2/3  flex justify-between py-32 row vh-100">  {/* md:flex-col not working */}
+
+
+<TeamCard/>
+	
 		<div className="col-sm-6  col-lg-3 my-auto">
 			<div className="box h-96 shadow-sm p-4">
 				<div className="image-wrapper mb-3">
