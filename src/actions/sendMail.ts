@@ -41,9 +41,7 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
             user: adminMail,
             pass: adminPass,
         },
-        tls: {
-            ciphers: "SSLv3",
-        },
+        secure:true
     });
     const mailOptions :Mail.Options = {
         from: adminMail,
