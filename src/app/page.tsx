@@ -174,6 +174,27 @@ export default function Home() {
         </div>
       </section >
 
+
+
+      {/* --------------------------------------------------------prizes------------------------------------------- */}
+      < section id="prizes" className="py-20 px-4" >
+        <div className="container mx-auto px-4">
+          <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center
+          bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-emerald-500
+          ">
+            Prizes To BE aNNouNcED SooN...
+          </h2>
+          {/* <div className="flex justify-center gap-10">
+            <div className="flex justify-center items-center rounded-md">
+              To be announced soon...
+
+            </div>
+          </div> */}
+        </div>
+      </section >
+
+
+
       {/* --------------------------------------------------------sponsors------------------------------------------- */}
       < section id="sponsors" className="py-20 px-4" >
         <div className="container mx-auto px-4">
