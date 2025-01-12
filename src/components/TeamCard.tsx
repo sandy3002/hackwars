@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./ui/card";
 import Image from "next/image";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 export interface Organizer{
   name: string;
   description: string;
@@ -29,9 +29,12 @@ const TeamCard = React.forwardRef<HTMLDivElement, OrganizerProps>(
       <div className=" h-4 w-full bg-gradient-to-b from-transparent to-black relative top-[-1rem]"/>
       <div className="px-4 pb-4">
         <h1 className="font-['Starjedi']">{info.name}</h1>
-        <p className=" italic">{info.description}<br/>{info.email}</p>
+        <p className=" italic">{info.description}</p>
         <div className="h-4"></div>
         <div className="flex justify-center items-center w-full gap-4">
+          {info.email && <a target="_blank" href={`mailto:${info.github}`} rel="noopener noreferrer">
+            <Mail color="black" className="bg-white p-1 rounded-full"></Mail>
+          </a>}
           {info.github && <a target="_blank" href={info.github} rel="noopener noreferrer">
             <Github color="black" className="bg-white p-1 rounded-full"></Github>
           </a>}
