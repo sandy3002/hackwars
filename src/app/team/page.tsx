@@ -29,7 +29,7 @@ const organizers : Organizer[] = [
 		name: "ubuntu",
 		description:"Support (Emotional)",
 		email: "hackwars.jgec@gmail.com",
-		linkedin: null,
+		linkedin: "https://www.linkedin.com/company/hackwars",
 		github: null,
 		image: "/assets/ubuntu.webp"
 	},
