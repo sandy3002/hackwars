@@ -19,7 +19,7 @@ Here are a few quick reminders:
 <li><strong>Start Date</strong>: 10th February, 2025</li>
 <li><strong>Submission Date</strong>: 17st February, 2025 (Form closes at 6PM)</li>
 <li><strong>WhatsApp Group</strong>: https://chat.whatsapp.com/GtXUIuUqL6sLOyxnYuoGcl</li>
-<li><strong>Submission Link</strong>:  https://hackwars.jgec.tech/submit</li>
+<li><strong>Submission Link</strong>:  https://hackwars.jgec.tech/submit (Only 1 person should submit)</li>
 </ol>
 <br>
 We can't wait to see the amazing ideas you'll bring to life. Stay tuned for more updates and get ready to code your way to success! (Exciting prizes await! 😉)
@@ -54,8 +54,8 @@ export async function mail(member: TeamMember,teamName: string, teamId: string){
                 path:'https://raw.github.com/Abhigyan103/Abhigyan103/main/Rules.pdf'
             },
             {
-                filename:'Badge.pdf',
-                path:'https://raw.github.com/Abhigyan103/Abhigyan103/main/Badge.pdf'
+                filename:'Badge.png',
+                path:'https://raw.github.com/Abhigyan103/Abhigyan103/main/Badge.png'
             },
         ]
     }
