@@ -1,69 +1,51 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
+import TeamCard, { Organizer } from "@/components/TeamCard"
 
-import TeamCard from "@/components/TeamCard";
+const organizers : Organizer[] = [
+	{
+		name: "Abhigyan Singh",
+		description:"Lead",
+		email: "ap2513@cse.jgec.ac.in",
+		linkedin: "https://www.linkedin.com/in/abhigyan103",
+		github: "https://github.com/Abhigyan103",
+		image: "/assets/abhigyan.webp"
+	},
+	{
+		name: "Sandipan Chatterjee",
+		description:"DevOps",
+		email: "sc2521@cse.jgec.ac.in",
+		linkedin: "https://www.linkedin.com/in/sandipan-chatterjee-jgec",
+		github: "https://github.com/sandy3002/",
+		image: "/assets/sandipan.webp"
+	},
+	{
+		name: "Rohini Afsana",
+		description:"Social",
+		email: "ra2554@ee.jgec.ac.in",
+		linkedin: "https://www.linkedin.com/in/rohini-afsana-7a0385250/",
+		github: null,
+		image: "/assets/rohini.webp"
+	},
+	{
+		name: "ubuntu",
+		description:"Cat",
+		email: "Error404",
+		linkedin: null,
+		github: null,
+		image: "/assets/ubuntu.webp"
+	},
+]
 
-export default function Register() {
-  const {toast} = useToast();
-  const router = useRouter();
+function TeamPage() {
   return (
-    
-<div className="container items-center justify-center ">
-	<div className="mx-auto w-2/3  flex justify-between py-32 row vh-100">  {/* md:flex-col not working */}
-
-
-<TeamCard/>
-	
-		<div className="col-sm-6  col-lg-3 my-auto">
-			<div className="box h-96 shadow-sm p-4">
-				<div className="image-wrapper mb-3">
-					<img className="img-fluid" src="/images/abhigyan.png" alt="..." />
-				</div>
-				<div className="box-desc">
-					<h5>Abhigyan Prakash Singh</h5>
-					<p className="text-zinc-700">Organizer</p>
-					<p className="text-zinc-700">Designer</p>
-					<p className="text-zinc-700">Web Developer</p>
-				</div>
-				
-			</div>
+	<div className="flex flex-col min-h-screen md:mx-16 justify-center items-center">
+		<h1 className="sm:text-3xl text-xl font-bold my-10 text-center font-['Starjedi'] tracking-widest text-white animate-pulse">
+            Meet our Team!
+        </h1>
+		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
+			{organizers.map((e)=><TeamCard className="w-[20rem] h-[30rem]" info={e}/>)}
 		</div>
-		<div className="col-sm-6 col-lg-3 my-auto">
-			<div className="box h-96 shadow-sm p-4">
-				<div className="image-wrapper mb-3">
-					<img className="img-fluid" src="/images/ubuntu.jpg" alt="..." />
-				</div>
-				<div className="box-desc">
-					<h5>Ubuntu</h5>
-					<p className="text-zinc-700">Mental Support</p>
-					<p className="text-zinc-700">Emotional Support</p>
-					<p className="text-zinc-700">Existential Support</p>
-				</div>
-				
-			</div>
-		</div>
-		<div className="col-sm-6  col-lg-3 my-auto">
-			<div className="box h-96 shadow-sm p-4">
-				<div className="image-wrapper mb-3">
-					<img className="img-fluid" src="https://images.pexels.com/photos/555790/pexels-photo-555790.png" alt="..." />
-				</div>
-				<div className="box-desc">
-					<h5>Sandipan chatterjee</h5>
-					<p className="text-zinc-700">.</p>
-					<p className="text-zinc-700">.</p>
-					<p className="text-zinc-700">something i guess</p>
-				</div>
-				
-			</div>
-		</div>
-		
 	</div>
-</div>	
-	
-  );
+  )
 }
 
-
+export default TeamPage
