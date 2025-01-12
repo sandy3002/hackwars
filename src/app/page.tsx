@@ -162,10 +162,12 @@ export default function Home() {
             <Card className="flex flex-1 flex-col p-6 max-w-xl card2 bg-gray-900/50 border-gray-800">
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">Judging Criteria</h3>
               <ul className="flex-1 flex flex-col text-gray-300">
-                <li className="flex-1">💡 Innovation & Creativity (30%)</li>
-                <li className="flex-1">🔧 Technical Complexity (25%)</li>
-                <li className="flex-1">🌍 Practicality & Impact (25%)</li>
-                <li className="flex-1">🗣️ Presentation (20%)</li>
+                <li className="flex-1">💻 User Interface (Design) - <span className="text-lime-400 font-bold">10 points</span></li>
+                <li className="flex-1">🧠 User Experience (Intuitive) - <span className="text-lime-400 font-bold">10 points</span></li>
+                <li className="flex-1">🧑🏻‍🤝‍🧑🏻 Synergy (Work with your teammate) - <span className="text-lime-400 font-bold">10 points</span></li>
+                <li className="flex-1">🗣️ Presentation (Video) - <span className="text-lime-400 font-bold">10 points</span></li>
+                <li className="flex-1">🌍 Usefulness - <span className="text-lime-400 font-bold">10 points</span></li>
+                <li className="flex-1">🔧 Code quality - <span className="text-lime-400 font-bold">10 points</span></li>
               </ul>
             </Card>
           </div>
@@ -185,7 +187,7 @@ export default function Home() {
                 alt="xyz Logo"
                 width={160}
                 height={100}
-                className="mx-auto bg-white p-4 rounded-md"
+                className="bg-white p-4 rounded-md"
               />
 
             </div>

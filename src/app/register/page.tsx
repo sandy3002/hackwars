@@ -16,8 +16,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { Spinner } from "@/components/Spinner";
+import { useState } from "react";
 export default function Register() {
   const {toast} = useToast();
+  const [formLoading, setFormLoading]=useState(false);
   const router = useRouter();
   const form = useForm<Team>({ 
     resolver: zodResolver(teamSchema),
@@ -29,15 +32,17 @@ export default function Register() {
   });
   const formState = form.formState;
   async function submit(team: Team,) {
+    setFormLoading(true);
     const resp = await saveTeam(team);
     if(resp == null){
       console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a gift!");
       toast({
         title: "Successfully registered!",
-        description: "A mail has been sent.",
+        description: "A mail will been sent to your team. Contact us if you don't recieve it in 10 minutes.",
         className:"bg-green-700 text-white"
       })
       router.push('/');
+      setFormLoading(false);
       return;
     }
     toast({
@@ -46,6 +51,7 @@ export default function Register() {
       className:"bg-red-500 text-white"
     })
     form.reset({},{keepValues:true, keepIsValid:false})
+    setFormLoading(false);
   }
   return (
     <div className="flex min-h-screen md:mx-16 items-center">
@@ -160,8 +166,8 @@ export default function Register() {
                 )}
               />
             </div>
-            <button disabled={!form.formState.isValid || form.formState.disabled} className="w-full box__link button-animation" type="submit">
-              Create account
+            <button disabled={!formState.isValid || formState.disabled || formLoading} className="w-full box__link button-animation" type="submit">
+              {!formLoading?"Create account":<Spinner className="bg-white"/>}
             </button>
           </form>
         </Form>
