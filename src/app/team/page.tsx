@@ -19,7 +19,7 @@ const organizers : Organizer[] = [
 	},
 	{
 		name: "Rohini Afsana",
-		description:"Social",
+		description:"Social Media",
 		email: "ra2554@ee.jgec.ac.in",
 		linkedin: "https://www.linkedin.com/in/rohini-afsana-7a0385250/",
 		github: null,
@@ -27,7 +27,7 @@ const organizers : Organizer[] = [
 	},
 	{
 		name: "ubuntu",
-		description:"Cat",
+		description:"Support (Emotional)",
 		email: "hackwars.jgec@gmail.com",
 		linkedin: null,
 		github: null,
