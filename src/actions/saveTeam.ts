@@ -1,7 +1,8 @@
 'use server';
 
 import client from "@/lib/db";
-import { Team, TeamMember } from "@/schemas/team";
+import { Team } from "@/schemas/team";
+import { mail } from "./sendMail";
 
 const TeamsCollection = client.db("hackwars").collection("Teams");
 async function generateTeamID() : Promise<string> {
@@ -45,10 +46,6 @@ export async function saveTeam(team: Team) : Promise<string | void>{
 
 async function mailTeamMembers(team: Team){
     for (let i = 0; i < 3; i++) {
-        await mail(team.members[i].email, team.id)
+        await mail(team.members[i], team.id)
     }
-}
-async function mail(email: string, teamId: string){
-    
-    //TODO
 }
