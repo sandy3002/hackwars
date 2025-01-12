@@ -5,12 +5,12 @@ import Mail from "nodemailer/lib/mailer";
 export default function getMailContent(name: string,team: Team){
     const SUBJECT = "Welcome to HackWars 2025!"
     const html= `Dear <strong>${name}</strong>,
-
+<br/>
 Congratulations on taking the first step towards becoming a better developer! 🎉 We're thrilled to have team <strong>${team.name}</strong> join <strong>HackWars 2025</strong>, where creativity meets innovation.
 <br><br>
 Your Team ID is <strong>${team.id}</strong>.
 <br>
-To help you prepare for the event, I've attached the <strong>Rules and Guidelines</strong> document and a <strong>Registration badge</strong> to show-off on your linkedin!. Please take some time to review it carefully. It covers everything you need to know, including the schedule, judging criteria, and submission process.
+To help you prepare for the event, I've attached the <strong>Rules and Guidelines</strong> document and a <strong>Registration badge</strong> to show-off on your linkedin!. <strong>Share this mail to your team members</strong> and please take some time to review it carefully. It covers everything you need to know, including the schedule, judging criteria, and submission process.
 <br>
 Here are a few quick reminders:
 <br>

@@ -4,7 +4,7 @@ import { Team, TeamMember } from "@/schemas/team";
 import getMailContent from "@/lib/mailContent";
 import Mail from "nodemailer/lib/mailer";
 
-export async function mail(member: TeamMember,team: Team){
+export async function mail(team: Team){
     const adminMail = process.env.EMAIL
     const adminPass = process.env.EMAIL_PASS
     const transporter = nodemailer.createTransport({
@@ -16,8 +16,8 @@ export async function mail(member: TeamMember,team: Team){
     });
     const mailOptions :Mail.Options = {
         from: adminMail,
-        to: member.email,
-        ...getMailContent(member.name,team),
+        to: team.members[0].email,
+        ...getMailContent(team.members[0].name,team),
         attachments:[
             {
                 filename:'Rules.pdf',

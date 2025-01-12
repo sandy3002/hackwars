@@ -39,15 +39,15 @@ export async function saveTeam(team: Team) : Promise<string | void>{
     }
     try{
         // mail(team.members[0],team.name,team.id);
-        await mailTeamMembers(team)
+        await mail(team)
     }catch(e){
         console.log(e);
         return "Succesfully registered. Couldn't send mail. Please contact us :("
     }
 }
 
-async function mailTeamMembers(team: Team){
-    for (let i = 0; i < 1; i++) {
-        await mail(team.members[i],team)
-    }
-}
+// async function mailTeamMembers(team: Team){
+//     for (let i = 0; i < 1; i++) {
+//         await mail(team.members[i],team)
+//     }
+// }

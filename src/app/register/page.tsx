@@ -38,7 +38,7 @@ export default function Register() {
       console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a gift!");
       toast({
         title: "Successfully registered!",
-        description: "A mail will been sent to your team. Contact us if you don't recieve it in 10 minutes.",
+        description: `A mail will been sent to ${team.members[0].name}. Contact us if you don't recieve it in 10 minutes.`,
         className:"bg-green-700 text-white"
       })
       router.push('/');
