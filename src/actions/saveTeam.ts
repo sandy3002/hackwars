@@ -38,15 +38,7 @@ export async function saveTeam(team: Team) : Promise<string | void>{
         team.id = await generateTeamID()
         team.createdAt = Date.now()
         await TeamsCollection.insertOne(team)
-        fetch(`${baseUrl}/api/sendMail`,{
-            method:"POST",
-            headers:{
-                Authorization:'Bearer YashYashYash123',
-                'Content-type':'application/json'
-            },
-            body:JSON.stringify(team)
-        })
-        return;
+        await mail(team)
     } catch (e){
         return "An unknown error occurred. :("
     }
