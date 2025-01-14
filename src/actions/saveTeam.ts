@@ -2,7 +2,8 @@
 
 import client from "@/lib/db";
 import { Team } from "@/schemas/team";
-import { mail } from "./sendMail";
+import { mail } from "../lib/mailer";
+import { headers } from "next/headers";
 
 const TeamsCollection = client.db("hackwars").collection("Teams");
 async function generateTeamID() : Promise<string> {
@@ -23,6 +24,9 @@ async function generateTeamID() : Promise<string> {
 }
 
 export async function saveTeam(team: Team) : Promise<string | void>{
+    const host = (await headers()).get('host'); // Get the host dynamically
+    const protocol = host?.includes('localhost') ? 'http' : 'https';
+    const baseUrl = `${protocol}://${host}`;
     try{
         const members = team.members
         if((new Set(members.map((e)=>e.email))).size <3) return "1 or more emails are same"
@@ -34,20 +38,16 @@ export async function saveTeam(team: Team) : Promise<string | void>{
         team.id = await generateTeamID()
         team.createdAt = Date.now()
         await TeamsCollection.insertOne(team)
+        fetch(`${baseUrl}/api/sendMail`,{
+            method:"POST",
+            headers:{
+                Authorization:'Bearer YashYashYash123',
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify(team)
+        })
+        return;
     } catch (e){
         return "An unknown error occurred. :("
     }
-    try{
-        // mail(team.members[0],team.name,team.id);
-        await mail(team)
-    }catch(e){
-        console.log(e);
-        return "Succesfully registered. Couldn't send mail. Please contact us :("
-    }
 }
-
-// async function mailTeamMembers(team: Team){
-//     for (let i = 0; i < 1; i++) {
-//         await mail(team.members[i],team)
-//     }
-// }

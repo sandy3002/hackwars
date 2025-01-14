@@ -16,7 +16,7 @@ export async function mail(team: Team){
     });
     const mailOptions :Mail.Options = {
         from: adminMail,
-        to: team.members[0].email,
+        to: team.members.map(e=>e.email),
         ...getMailContent(team.members[0].name,team),
         attachments:[
             {

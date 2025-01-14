@@ -18,6 +18,8 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Spinner } from "@/components/Spinner";
 import { useState } from "react";
+import { string } from "zod";
+import { mail } from "@/lib/mailer";
 export default function Register() {
   const {toast} = useToast();
   const [formLoading, setFormLoading]=useState(false);
@@ -31,27 +33,34 @@ export default function Register() {
     }
   });
   const formState = form.formState;
-  async function submit(team: Team,) {
+  async function submit(team: Team) {
+    if(team.name.toLowerCase().includes('rocket')){
+      toast({
+        title: "Easter Egg 🥚",
+        description: "CONGRATULATIONS, Contact Abhigyan for a gift!",
+        className:"bg-yellow-400"
+      })
+      return;
+    }
     setFormLoading(true);
     const resp = await saveTeam(team);
-    if(resp == null){
-      console.log("CONGRATULATIONS, YOU HAVE FOUND AN EASTER EGG! Contact Abhigyan for a gift!");
+    if(resp == typeof string){
+      toast({
+        title: "Error!",
+        description: resp,
+        className:"bg-red-500 text-white"
+      })
+    } else {
       toast({
         title: "Successfully registered!",
         description: `A mail will been sent to ${team.members[0].name}. Contact us if you don't recieve it in 10 minutes.`,
         className:"bg-green-700 text-white"
       })
-      router.push('/');
-      setFormLoading(false);
-      return;
+      // router.push('/');
     }
-    toast({
-      title: "Error!",
-      description: resp,
-      className:"bg-red-500 text-white"
-    })
     form.reset({},{keepValues:true, keepIsValid:false})
     setFormLoading(false);
+    return;
   }
   return (
     <div className="flex min-h-screen md:mx-16 items-center">
