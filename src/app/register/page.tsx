@@ -95,7 +95,7 @@ export default function Register() {
                 name="year"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Particpant's Year</FormLabel>
+                    <FormLabel>Year</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
