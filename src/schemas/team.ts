@@ -1,6 +1,5 @@
 import z from "zod";
 
-
 export const teamMemberSchema = z.object({
     name: z.string().min(2,"Must enter a valid name"),
     email: z.string().email("Must be a valid email").toLowerCase(),

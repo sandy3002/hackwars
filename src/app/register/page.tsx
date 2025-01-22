@@ -57,7 +57,7 @@ export default function Register() {
         description: `A mail will been sent to ${team.members[0].name}. Contact us if you don't recieve it in 10 minutes.`,
         className:"bg-green-700 text-white"
       })
-      // router.push('/');
+      router.push('/');
     }
     form.reset({},{keepValues:true, keepIsValid:false})
     setFormLoading(false);

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import TeamCard, { Organizer } from "@/components/TeamCard"
 
 const organizers : Organizer[] = [
@@ -34,6 +35,11 @@ const organizers : Organizer[] = [
 		image: "/assets/ubuntu.webp"
 	},
 ]
+
+export const metadata: Metadata = {
+	title: "Our Team | HackWars",
+	description: "HackWars hackathon team page.",
+};
 
 function TeamPage() {
   return (

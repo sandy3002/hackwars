@@ -3,7 +3,6 @@
 import client from "@/lib/db";
 import { Team } from "@/schemas/team";
 import { mail } from "../lib/mailer";
-import { headers } from "next/headers";
 
 const TeamsCollection = client.db("hackwars").collection("Teams");
 async function generateTeamID() : Promise<string> {
@@ -24,9 +23,6 @@ async function generateTeamID() : Promise<string> {
 }
 
 export async function saveTeam(team: Team) : Promise<string | void>{
-    const host = (await headers()).get('host'); // Get the host dynamically
-    const protocol = host?.includes('localhost') ? 'http' : 'https';
-    const baseUrl = `${protocol}://${host}`;
     try{
         const members = team.members
         if((new Set(members.map((e)=>e.email))).size <3) return "1 or more emails are same"
