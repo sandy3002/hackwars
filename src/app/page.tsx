@@ -81,16 +81,17 @@ export default function Home() {
                   What is Hack Wars?
                 </h3>
                 <p className="text-gray-300">
-                  🚀 HackWars 2025 is proudly the first intra-college hackathon of
-                  Jalpaiguri Government Engineering College (JGEC), a platform
-                  where innovation meets implementation.
+                  🚀 HackWars 2025 is proudly the first intra-college hackathon
+                  of Jalpaiguri Government Engineering College (JGEC), a
+                  platform where innovation meets implementation.
                 </p>
                 <p className="text-gray-300">
-                  This event will bring together talented students to brainstorm🤯,
-                  collaborate👥, and develop🔧 technology-driven solutions to
-                  real-world problems. With a focus on creativity, problem-solving
-                  and technical expertise, this hackathon is an opportunity to
-                  foster a culture of innovation within our campus.✨
+                  This event will bring together talented students to
+                  brainstorm🤯, collaborate👥, and develop🔧 technology-driven
+                  solutions to real-world problems. With a focus on creativity,
+                  problem-solving and technical expertise, this hackathon is an
+                  opportunity to foster a culture of innovation within our
+                  campus.✨
                 </p>
               </div>
               <div>
@@ -109,19 +110,28 @@ export default function Home() {
           </div>
         </div>
         {/* </div> */}
-      </section >
+      </section>
 
       {/* ---------------------------------------------------------------TIMELINE--------------------------------------------- */}
 
-      < section id="timeline" className="py-20 bg-gray-900/30" >
+      <section id="timeline" className="py-20 bg-gray-900/30">
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             EvEnt Details
           </h2>
           <div className="max-w-3xl mx-auto space-y-8">
-            {[{ time: "10th February", event: "Registration & Check-in", icon: Users },
-            { time: "17th February", event: "Submission Deadline", icon: Clock },
-            { time: "Mode", event: "Online", icon: Code }
+            {[
+              {
+                time: "10th February",
+                event: "Registration & Check-in",
+                icon: Users,
+              },
+              {
+                time: "17th February",
+                event: "Submission Deadline",
+                icon: Clock,
+              },
+              { time: "Mode", event: "Online", icon: Code },
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 flex items-center justify-center">
@@ -137,11 +147,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* ---------------------------------------------------------------RULES--------------------------------------------- */}
 
-      < section id="rules" className="py-20 px-4" >
+      <section id="rules" className="py-20 px-4">
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             RulEs and GuidElinEs
@@ -153,37 +163,95 @@ export default function Home() {
               </h3>
               <ul className="flex-1 flex flex-col  text-gray-300">
                 <li className="flex-1">👥 Team size: 3 members</li>
-                <li className="flex-1">🏫 All team members must be from JGEC</li>
-                <li className="flex-1">🔗 Use of third-party APIs is allowed</li>
+                <li className="flex-1">
+                  🏫 All team members must be from JGEC
+                </li>
+                <li className="flex-1">
+                  🔗 Use of third-party APIs is allowed
+                </li>
                 <li className="flex-1">📝 Project must be original work</li>
-                <li className="flex-1">📂 Code must be submitted to GitHub / GitLab / SourceForge / Gitea</li>
+                <li className="flex-1">
+                  📂 Code must be submitted to GitHub / GitLab / SourceForge /
+                  Gitea
+                </li>
               </ul>
             </Card>
             <Card className="flex flex-1 flex-col p-6 max-w-xl card2 bg-gray-900/50 border-gray-800">
-              <h3 className="text-2xl font-bold mb-4 text-emerald-400">Judging Criteria</h3>
+              <h3 className="text-2xl font-bold mb-4 text-emerald-400">
+                Judging Criteria
+              </h3>
               <ul className="flex-1 flex flex-col text-gray-300">
-                <li className="flex-1">💻 User Interface (Design) - <span className="text-lime-400 font-bold">10 points</span></li>
-                <li className="flex-1">🧠 User Experience (Intuitive) - <span className="text-lime-400 font-bold">10 points</span></li>
-                <li className="flex-1">🧑🏻‍🤝‍🧑🏻 Synergy (Work with your teammate) - <span className="text-lime-400 font-bold">10 points</span></li>
-                <li className="flex-1">🗣️ Presentation (Video) - <span className="text-lime-400 font-bold">10 points</span></li>
-                <li className="flex-1">🌍 Usefulness - <span className="text-lime-400 font-bold">10 points</span></li>
-                <li className="flex-1">🔧 Code quality - <span className="text-lime-400 font-bold">10 points</span></li>
+                <li className="flex-1">
+                  💻 User Interface (Design) -{" "}
+                  <span className="text-lime-400 font-bold">10 points</span>
+                </li>
+                <li className="flex-1">
+                  🧠 User Experience (Intuitive) -{" "}
+                  <span className="text-lime-400 font-bold">10 points</span>
+                </li>
+                <li className="flex-1">
+                  🧑🏻‍🤝‍🧑🏻 Synergy (Work with your teammate) -{" "}
+                  <span className="text-lime-400 font-bold">10 points</span>
+                </li>
+                <li className="flex-1">
+                  🗣️ Presentation (Video) -{" "}
+                  <span className="text-lime-400 font-bold">10 points</span>
+                </li>
+                <li className="flex-1">
+                  🌍 Usefulness -{" "}
+                  <span className="text-lime-400 font-bold">10 points</span>
+                </li>
+                <li className="flex-1">
+                  🔧 Code quality -{" "}
+                  <span className="text-lime-400 font-bold">10 points</span>
+                </li>
               </ul>
             </Card>
           </div>
         </div>
-      </section >
-
-
+      </section>
 
       {/* --------------------------------------------------------prizes------------------------------------------- */}
-      < section id="prizes" className="py-20 px-4" >
+      <section id="prizes" className="py-20 px-4">
         <div className="container mx-auto px-4">
-          <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center
-          bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-emerald-500
-          ">
-            Prizes To BE aNNouNcED SooN...
+          <h2
+            className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center "
+          >
+            Prizes
           </h2>
+          <h6
+            className="font-sans tracking-widest text-m mb-12 text-center "
+          >
+            Note that the pictures shown here are just for representation 
+            and does not reflect the actual prizes. The final prizes may vary in shapes, looks and sizes. 
+          </h6>
+
+          <div className="flex flex-col justify-center gap-10 md:flex-row">
+            <Card className="flex flex-1 justify-center align-middle p-6 max-w-xl bg-gradient-to-br from-cyan-400/20 to-purple-700/15 border-gray-800">
+              <Image
+                src="/assets/tshirt.png"
+                alt="T shirt"
+                width={200}
+                height={200}
+              />
+            </Card>
+            <Card className="flex flex-1 justify-center align-middle p-6 max-w-xl bg-gradient-to-br from-cyan-400/20 to-purple-700/15 border-gray-800">
+              <Image 
+                src="/assets/mug.png" 
+                alt="Mug" 
+                width={200} 
+                height={200} />
+            </Card>
+            <Card className="flex flex-1 justify-center align-middle p-6 max-w-xl bg-gradient-to-br from-cyan-400/20 to-purple-700/15 border-gray-800">
+              <Image
+                src="/assets/diary.png"
+                alt="Notebook"
+                width={200}
+                height={200}
+              />
+            </Card>
+          </div>
+
           {/* <div className="flex justify-center gap-10">
             <div className="flex justify-center items-center rounded-md">
               To be announced soon...
@@ -191,12 +259,10 @@ export default function Home() {
             </div>
           </div> */}
         </div>
-      </section >
-
-
+      </section>
 
       {/* --------------------------------------------------------sponsors------------------------------------------- */}
-      < section id="sponsors" className="py-20 px-4" >
+      <section id="sponsors" className="py-20 px-4">
         <div className="container mx-auto px-4">
           <h2 className="font-['Starjedi'] tracking-widest text-5xl font-bold mb-12 text-center">
             SPonSorS
@@ -210,7 +276,6 @@ export default function Home() {
                 height={100}
                 className="bg-white p-4 rounded-md"
               />
-
             </div>
             <div className="card3 rounded-md">
               <Image
@@ -220,11 +285,10 @@ export default function Home() {
                 height={100}
                 className="w-auto rounded-md"
               />
-
             </div>
           </div>
         </div>
-      </section >
+      </section>
     </>
   );
 }
