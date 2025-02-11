@@ -5,14 +5,18 @@ export async function middleware(request: NextRequest) {
 
     const path = request.nextUrl.pathname;
     const admin = request.cookies.get("admin")
-    if(admin?.value == "I am god!"){
+    const response = NextResponse.next()
+    if(path.startsWith('/makeMeAnAdminOrElseIWillSueYou')){
+        response.cookies.set("admin", process.env.ADMIN_COOKIE as string);
+    }
+    if(admin?.value == process.env.ADMIN_COOKIE){
         return null;
     }
     if(path.startsWith("/register")){
         return NextResponse.redirect(new URL("/", request.url));
     }
 
-    return null
+    return response;
 }
 export const config = {
     matcher: [
