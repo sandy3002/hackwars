@@ -58,11 +58,11 @@ export default function Home() {
           </h1>
           <button
             onClick={() => {
-              r.push("/register");
+              r.push("/submit");
             }}
             className="box__link button-animation px-8 py-6 text-lg"
           >
-            Register now!
+            Submit now!
           </button>
         </div>
       </section>

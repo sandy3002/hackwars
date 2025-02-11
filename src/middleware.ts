@@ -8,9 +8,9 @@ export async function middleware(request: NextRequest) {
     if(admin?.value == "I am god!"){
         return null;
     }
-    // if(path.startsWith("/submit")){
-    //     return NextResponse.redirect(new URL("/", request.url));
-    // }
+    if(path.startsWith("/register")){
+        return NextResponse.redirect(new URL("/", request.url));
+    }
 
     return null
 }
