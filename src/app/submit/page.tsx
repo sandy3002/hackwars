@@ -52,7 +52,7 @@ export default function Register() {
   async function submit(formData:SubmitFormType) {
     setFormLoading(true);
     const resp = await saveSubmission(formData);
-    if(resp == typeof string){
+    if(resp){
       toast({
         title: "Error!",
         description: resp,

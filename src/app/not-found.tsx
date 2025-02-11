@@ -25,12 +25,13 @@ function Page() {
                 {percentage}% Complete
                 </div>
                 <div className="flex pt-11">
-                    <Image
-                    src="/images/qr.png"
-                    alt="QR"
-                    width={150}
-                    height={150}
-                    className="pr-6"/>
+                    <div className="p-2 bg-white mr-4">
+                        <Image
+                        src="/images/QR.png"
+                        alt="QR"
+                        width={150}
+                        height={150}/>
+                    </div>
                     <div className="text-sm h-[150] flex flex-col justify-between">
                     <div>For more information about this issue and possible fixes, visit <a className="text-blue-300" href="https://github.com/Abhigyan103">Here</a> or <a className="text-blue-300" href="https://github.com/sandy3002">Here</a> and follow.</div>
                     <div>If you call support person, give them this info<br/>Stop code: ERROR_404</div>
