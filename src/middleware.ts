@@ -1,18 +1,18 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-
+const ADMIN_COOKIE="IxRlXa+RNKs/Ly1JUSCAhp5hk3l3AMhK4apkVN6E7gU="
 export async function middleware(request: NextRequest) {
 
     const path = request.nextUrl.pathname;
-    const admin = request.cookies.get("admin")
+    const admin = request.cookies.get("maalik")
     const response = NextResponse.next()
     if(path.startsWith('/makeMeAnAdminOrElseIWillSueYou')){
-        response.cookies.set("admin", process.env.ADMIN_COOKIE as string);
+        response.cookies.set("maalik", ADMIN_COOKIE);
     }
-    if(admin?.value == process.env.ADMIN_COOKIE){
+    if(admin?.value == ADMIN_COOKIE){
         return null;
     }
-    if(path.startsWith("/register")){
+    if(path.startsWith("/register") || path.startsWith("/admin")){
         return NextResponse.redirect(new URL("/", request.url));
     }
 

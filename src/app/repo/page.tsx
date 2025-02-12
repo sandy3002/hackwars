@@ -16,28 +16,22 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Spinner } from "@/components/Spinner";
 import { useEffect, useState } from "react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { submitFormSchema, SubmitFormType } from "@/schemas/submit";
-import { saveSubmission } from "@/actions/saveSubmission";
-import { Textarea } from "@/components/ui/textarea";
+import { saveRepo } from "@/actions/saveSubmission";
 import { getTeamName } from "@/actions/getTeamName";
+import { RepoFormType, repoSchema } from "@/schemas/repo";
 
 export default function Register() {
   const {toast} = useToast();
   const [formLoading, setFormLoading]=useState(false);
-  const [teamName, setTeamName] = useState("");
   const [teamNameLoading, setTeamNameLoading] = useState(false);
   const [teamNameActive, setTeamNameActive] = useState(false);
+  const [teamName, setTeamName] = useState("");
   const router = useRouter();
-  const form = useForm<SubmitFormType>({ 
-    resolver: zodResolver(submitFormSchema),
+  const form = useForm<RepoFormType>({ 
+    resolver: zodResolver(repoSchema),
     defaultValues:{
       teamId:"",
-      teamName:"",
-      year:"",
-      repo: "",
-      video: "",
-      comments: ""
+      repo: ""
     }
   });
   const formState = form.formState;
@@ -54,9 +48,9 @@ export default function Register() {
       setTeamNameActive(false);
     }
   },[teamId])
-  async function submit(formData:SubmitFormType) {
+  async function submit(formData:RepoFormType) {
     setFormLoading(true);
-    const resp = await saveSubmission(formData);
+    const resp = await saveRepo(formData);
     if(resp){
       toast({
         title: "Error!",
@@ -86,7 +80,7 @@ export default function Register() {
             className="space-y-6 container mx-auto p-8"
           >
             <h1 className="sm:text-3xl text-xl font-bold mb-10 text-center font-['Starjedi'] tracking-widest text-white animate-pulse">
-              You Submitting??
+              onE Small Step!
             </h1>
               <FormField
                 control={form.control}
@@ -98,7 +92,7 @@ export default function Register() {
                       <Input placeholder="T1234" {...field} />
                     </FormControl>
                     <FormDescription>
-                    {teamNameLoading?
+                      {teamNameLoading?
                         <Spinner size={"sm"} variant={"muted"}/>
                         :teamNameActive?teamName? 
                           <span className="text-green-400">Team: {teamName}</span>
@@ -112,68 +106,12 @@ export default function Register() {
               />
               <FormField
                 control={form.control}
-                name="category"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Project Category</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select your project category" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Education">Education</SelectItem>
-                        <SelectItem value="Health">Healthcare</SelectItem>
-                        <SelectItem value="Finance">Finance</SelectItem>
-                        <SelectItem value="Game">Games</SelectItem>
-                        <SelectItem value="Combo">Combination of 2 or more! </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
                 name="repo"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Repository Link</FormLabel>
                     <FormControl>
                       <Input placeholder="github.com/sandy3002/hackwars" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="video"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Presentaion Video Link</FormLabel>
-                    <FormControl>
-                      <Input placeholder="youtube.com/watch?v=xvFZjo5PgG0" {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      Can be a youtube, drive, github link or anything else.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="comments"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Anything else?</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="This project made me miserable...."
-                        {...field}
-                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

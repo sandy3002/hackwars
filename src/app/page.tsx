@@ -2,9 +2,8 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Calendar, Clock, Users, ScrollText, Send, Code } from "lucide-react";
+import { Clock, Users, Code } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // import styles from './styles.css'
