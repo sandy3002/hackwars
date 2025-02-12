@@ -1,22 +1,6 @@
 "use client";
 import { Card } from "@/components/ui/card";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { Spinner } from "@/components/Spinner";
 import { useEffect, useState } from "react";
-import { saveRepo } from "@/actions/saveSubmission";
-import { getTeamName } from "@/actions/getTeamName";
 import { RepoFormType, repoSchema } from "@/schemas/repo";
 import { getRepos, getSubmissions, getTeams } from "@/actions/getAll";
 import { Team } from "@/schemas/team";
@@ -45,9 +29,9 @@ export default function Register() {
       </h1>
       <div className="flex gap-6">
         {teams.map((e)=>{
-          return <Card className="backdrop-blur-md bg-gray-900 p-6 min-w-[20rem]">
+          return <Card key={e.id} className="backdrop-blur-md bg-gray-900 p-6 min-w-[20rem]">
             <p>Team Name: {e.name}</p>
-            <p>Team members:{e.members.map((m)=><div>{m.name}, {m.email}</div>)}</p>
+            <p>Team members:{e.members.map((m)=><div key={m.email}>{m.name}, {m.email}</div>)}</p>
             <p>Year: {e.year}</p>
             <p>ID: {e.id}</p>
           </Card>
@@ -58,7 +42,7 @@ export default function Register() {
       </h1>
       <div className="flex gap-6">
         {repos.map((e)=>{
-          return <Card className="backdrop-blur-md bg-gray-900 p-6 min-w-[20rem]">
+          return <Card key={e.repo} className="backdrop-blur-md bg-gray-900 p-6 min-w-[20rem]">
             <p>Team Name: {e.repo}</p>
             <p>ID: {e.teamId}</p>
           </Card>
@@ -69,7 +53,7 @@ export default function Register() {
       </h1>
       <div className="flex gap-6">
         {submissions.map((e)=>{
-          return <Card className="backdrop-blur-md bg-gray-900 p-6 min-w-[20rem]">
+          return <Card key={e.teamName} className="backdrop-blur-md bg-gray-900 p-6 min-w-[20rem]">
             <p>Team Name: {e.teamName}</p>
             <p>Year: {e.year}</p>
             <a href={e.repo} className="text-blue-300">Repository </a>
