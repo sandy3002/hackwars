@@ -8,6 +8,7 @@ export async function middleware(request: NextRequest) {
     const response = NextResponse.next()
     if(path.startsWith('/makeMeAnAdminOrElseIWillSueYou')){
         response.cookies.set("maalik", ADMIN_COOKIE);
+        return NextResponse.redirect(new URL("/admin", request.url));
     }
     if(admin?.value == ADMIN_COOKIE){
         return null;
