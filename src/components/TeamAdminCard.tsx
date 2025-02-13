@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import Image from "next/image";
+import { Card, CardTitle } from "./ui/card";
 import { Github, Mail, Check } from "lucide-react";
 import { Team } from "@/schemas/team";
 import { SubmitFormType } from "@/schemas/submit";
@@ -22,7 +21,7 @@ const TeamAdminCard = React.forwardRef<HTMLDivElement, TeamAdminProps>(
                 {repo && <a target="_blank" href={repo} rel="noopener noreferrer">
                     <Github className="text-black rounded-full bg-white p-1"/>
                 </a>}
-                {submission && <Link href={"/admin/submissions/"+submission.teamId}>
+                {submission && <Link href={`/admin/submissions/${submission.teamId}`}>
                     <Check className="text-black rounded-full bg-green-300 p-1"/>
                 </Link>}
                 

@@ -1,6 +1,6 @@
 import { getSubmissions } from "@/actions/getAll";
 import Modal from "@/components/Modal"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import { SubmitFormType } from "@/schemas/submit";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ export default async function SubmissionModal(props:Props) {
   const {teamID} = params;
   const submitForm= (await getSubmissions()).find(m=>m.teamId==teamID) as SubmitFormType
   return (
-    <>
+    <Modal>
       <Card className="p-6">
         <CardTitle>{submitForm.teamName}</CardTitle>
         <Link href={submitForm.repo} className="mr-2">Repository</Link>
@@ -21,6 +21,6 @@ export default async function SubmissionModal(props:Props) {
         <div>Category: {submitForm.category}</div>
         <div>Message: {submitForm.comments}</div>
       </Card>
-    </>
+    </Modal>
   )
 }

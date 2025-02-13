@@ -1,0 +1,100 @@
+.
+├── components.json
+├── eslint.config.mjs
+├── next.config.ts
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── public
+│   ├── assets
+│   │   ├── abhigyan.webp
+│   │   ├── diary.png
+│   │   ├── lightning.svg
+│   │   ├── logo.svg
+│   │   ├── mug.png
+│   │   ├── rohini.webp
+│   │   ├── sandipan.webp
+│   │   ├── tshirt.png
+│   │   ├── ubuntu.webp
+│   │   └── xyz.svg
+│   ├── fonts
+│   │   ├── micross.ttf
+│   │   └── Starjedi.ttf
+│   ├── images
+│   │   ├── bg.png
+│   │   ├── g30.png
+│   │   ├── logo.png
+│   │   ├── QR.png
+│   │   └── windows.png
+│   └── robots.txt
+├── README.md
+├── src
+│   ├── actions
+│   │   ├── getAll.ts
+│   │   ├── getTeamName.ts
+│   │   ├── saveSubmission.ts
+│   │   └── saveTeam.ts
+│   ├── app
+│   │   ├── admin
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── submissions
+│   │   │   │   └── [teamID]
+│   │   │   │       └── page.tsx
+│   │   │   └── @submitModal
+│   │   │       ├── default.tsx
+│   │   │       └── (.)submissions
+│   │   │           └── [teamID]
+│   │   │               └── page.tsx
+│   │   ├── globals.css
+│   │   ├── icon.ico
+│   │   ├── layout.tsx
+│   │   ├── not-found.tsx
+│   │   ├── page.tsx
+│   │   ├── register
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── repo
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── submit
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   └── team
+│   │       └── page.tsx
+│   ├── components
+│   │   ├── Modal.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── Spinner.tsx
+│   │   ├── TeamAdminCard.tsx
+│   │   ├── TeamCard.tsx
+│   │   └── ui
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── dialog.tsx
+│   │       ├── form.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── navigation-menu.tsx
+│   │       ├── select.tsx
+│   │       ├── separator.tsx
+│   │       ├── sheet.tsx
+│   │       ├── textarea.tsx
+│   │       ├── toaster.tsx
+│   │       └── toast.tsx
+│   ├── hooks
+│   │   └── use-toast.ts
+│   ├── lib
+│   │   ├── db.ts
+│   │   ├── mailContent.ts
+│   │   ├── mailer.ts
+│   │   └── utils.ts
+│   ├── middleware.ts
+│   └── schemas
+│       ├── repo.ts
+│       ├── submit.ts
+│       └── team.ts
+├── tailwind.config.ts
+├── treeOutput.txt
+└── tsconfig.json

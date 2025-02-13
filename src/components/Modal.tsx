@@ -1,4 +1,5 @@
 'use client';
+import { Button } from "./ui/button";
 import { Dialog, DialogOverlay, DialogContent } from "./ui/dialog";
 import { useRouter } from "next/navigation";
 export default function Modal({
@@ -10,7 +11,8 @@ export default function Modal({
     }
   return (
     <Dialog defaultOpen={true} open={true} onOpenChange={handleOpenChange}>
-        <DialogOverlay className="overflow-y-hidden">
+        <DialogOverlay className="overflow-y-hidden flex flex-col items-center justify-center">
+            <Button onClick={handleOpenChange}>Close</Button>
             {children}
         </DialogOverlay>
     </Dialog>

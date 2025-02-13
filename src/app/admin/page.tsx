@@ -30,7 +30,7 @@ export default function Register() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {teams.sort((a,b)=>parseInt(a.year)-parseInt(b.year)).map((e)=>{
-          return <TeamAdminCard team={e} repo={repos.find((v)=>v.teamId==e.id)?.repo} submission={submissions.find((v)=>v.teamId==e.id)}/>
+          return <TeamAdminCard key={e.id} team={e} repo={repos.find((v)=>v.teamId==e.id)?.repo} submission={submissions.find((v)=>v.teamId==e.id)}/>
         })}
       </div>
       </div>

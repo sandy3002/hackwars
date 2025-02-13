@@ -5,10 +5,10 @@ export async function middleware(request: NextRequest) {
 
     const path = request.nextUrl.pathname;
     const admin = request.cookies.get("maalik")
-    const response = NextResponse.next()
     if(path.startsWith('/makeMeAnAdminOrElseIWillSueYou')){
-        response.cookies.set("maalik", ADMIN_COOKIE);
-        return NextResponse.redirect(new URL("/admin", request.url));
+        const resp=NextResponse.redirect(new URL("/admin", request.url));
+        resp.cookies.set("maalik", ADMIN_COOKIE);
+        return resp
     }
     if(admin?.value == ADMIN_COOKIE){
         return null;
@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL("/", request.url));
     }
 
-    return response;
+    return null;
 }
 export const config = {
     matcher: [

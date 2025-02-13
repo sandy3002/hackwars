@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Admin Panel | Hackwars",
   description: "A hackathon. Made by JGEC students, for JGEC students",
 };
-const layout = ({ children, modal }: { children: React.ReactNode, modal: React.ReactNode }) => {
+const layout = ({ children, submitModal }: { children: React.ReactNode, submitModal: React.ReactNode }) => {
     return (
-      <div>
-        {modal}
+      <>
+        {submitModal}
         {children}
-      </div>
+      </>
     );
   };
   
