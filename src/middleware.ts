@@ -13,7 +13,7 @@ export async function middleware(request: NextRequest) {
     if(admin?.value == ADMIN_COOKIE){
         return null;
     }
-    if(path.startsWith("/register") || path.startsWith("/admin")){
+    if(path.startsWith("/register") || path.startsWith("/submit") || path.startsWith("/admin")){
         return NextResponse.redirect(new URL("/", request.url));
     }
 
